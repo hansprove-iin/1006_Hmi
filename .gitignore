@@ -1,0 +1,28 @@
+*.suo
+*.bak
+*.~u
+_Libraries/
+_Boot/*
+_CompileInfo/
+*.tmc
+*.tpy
+*.tclrs
+*.htm
+*.tmcRefac
+.vs/*
+# TwinCAT HMI, filter downloaded JSON schema files
+json-schema.org
+Packages/*
+_Repository/*
+TcHmiProject1/ML_images/*.*
+
+# --- TwinCAT HMI Specific ---
+.engineering_servers/     # Local HMI server instances and lock files
+liveview_*                # Temporary files from LiveView sessions
+*.cache                   # HMI build and browser caches
+*.db-shm                  # Database shared memory (HMI server)
+*.db-wal                  # Database write-ahead log (HMI server)
+*.pid                     # Process IDs for running HMI servers
+.hmiframework/            # Framework binaries (can be restored via NuGet/TE2000)
+.hmipkgs/                 # Downloaded HMI packages
+tchmipublish.journal.json # Publish metadata

@@ -1,0 +1,45 @@
+{
+  "$schema": "../../../../../TcHmiFramework/Schema/ThemeDescription.Schema.json",
+  "controlTypeValues": {
+    "TcHmi.Controls.Beckhoff.TcHmiEventGrid": {
+      "attributes": {},
+      "themedResources": {
+        "MessageIcon": {
+          "imagePath": "TcHmi.Controls.Beckhoff.TcHmiEventGrid/Images/message.svg",
+          "width": 30,
+          "height": 30
+        },
+        "AlarmIcon": {
+          "imagePath": "TcHmi.Controls.Beckhoff.TcHmiEventGrid/Images/alarm.svg",
+          "width": 30,
+          "height": 30
+        },
+        "VerboseIcon": {
+          "imagePath": "TcHmi.Controls.Beckhoff.TcHmiEventGrid/Images/verbose.svg",
+          "width": 30,
+          "height": 30
+        },
+        "InfoIcon": {
+          "imagePath": "TcHmi.Controls.Beckhoff.TcHmiEventGrid/Images/info.svg",
+          "width": 30,
+          "height": 30
+        },
+        "WarningIcon": {
+          "imagePath": "TcHmi.Controls.Beckhoff.TcHmiEventGrid/Images/warning.svg",
+          "width": 30,
+          "height": 30
+        },
+        "ErrorIcon": {
+          "imagePath": "TcHmi.Controls.Beckhoff.TcHmiEventGrid/Images/error.svg",
+          "width": 30,
+          "height": 30
+        },
+        "CriticalIcon": {
+          "imagePath": "TcHmi.Controls.Beckhoff.TcHmiEventGrid/Images/critical.svg",
+          "width": 30,
+          "height": 30
+        }
+      }
+    }
+  }
+}

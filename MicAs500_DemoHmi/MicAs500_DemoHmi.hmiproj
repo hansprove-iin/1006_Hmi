@@ -1,0 +1,961 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Clean;Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.TypeScript.MSBuild.5.9.3\build\Microsoft.TypeScript.MSBuild.props" Condition="Exists('..\packages\Microsoft.TypeScript.MSBuild.5.9.3\build\Microsoft.TypeScript.MSBuild.props')" />
+  <Import Project="..\packages\Microsoft.TypeScript.MSBuild.5.3.2\build\Microsoft.TypeScript.MSBuild.props" Condition="Exists('..\packages\Microsoft.TypeScript.MSBuild.5.3.2\build\Microsoft.TypeScript.MSBuild.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <TcHmiDirectory>$(registry:HKEY_CURRENT_USER\Software\Beckhoff\TwinCAT3\3.1@InstallDir)\..\Functions\TE2000-HMI-Engineering</TcHmiDirectory>
+    <TcHmiDirectory Condition="'$(TcHmiDirectory)'==''">$(registry:HKEY_LOCAL_MACHINE\Software\Beckhoff\TwinCAT3\3.1@InstallDir)\..\Functions\TE2000-HMI-Engineering</TcHmiDirectory>
+    <TcHmiDirectory Condition="'$(TcHmiDirectory)'==''">$(registry:HKEY_LOCAL_MACHINE\Software\Wow6432Node\Beckhoff\TwinCAT3\3.1@InstallDir)\..\Functions\TE2000-HMI-Engineering</TcHmiDirectory>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">15.0</VisualStudioVersion>
+    <AvailablePlatforms>TwinCAT HMI</AvailablePlatforms>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <HmiTitle>Please enter your Title...</HmiTitle>
+    <HmiVerboseLevel>2</HmiVerboseLevel>
+    <HmiVersion>1.0.0.0</HmiVersion>
+    <HmiCommunicationServerPort>3004</HmiCommunicationServerPort>
+    <HmiLogTcHmiServerMessages>false</HmiLogTcHmiServerMessages>
+    <HmiLogDesignerModeComMessages>false</HmiLogDesignerModeComMessages>
+    <HmiDefaultLanguage>client</HmiDefaultLanguage>
+    <HmiViewportInitialScale>1.0</HmiViewportInitialScale>
+    <HmiViewportMinimumScale />
+    <HmiViewportMaximumScale />
+    <HmiViewportUserScaleable>Default</HmiViewportUserScaleable>
+    <HmiPostProcessing>True</HmiPostProcessing>
+    <HmiUseX64>True</HmiUseX64>
+    <TargetFrameworkMoniker>native,Version=v1.12.0,Profile=tchmi</TargetFrameworkMoniker>
+    <TargetFramework>native1.12-tchmi</TargetFramework>
+    <AzureFunctionsVersion>v2</AzureFunctionsVersion>
+    <TcHmi_Beckhoff_TwinCAT_HMI_Server_Engineering_IncludeInArchive>False</TcHmi_Beckhoff_TwinCAT_HMI_Server_Engineering_IncludeInArchive>
+    <Name>MicAs500_DemoHmi</Name>
+    <HmiCommunicationRouterPort>10101</HmiCommunicationRouterPort>
+    <HmiCommunicationServerAuthPort>13004</HmiCommunicationServerAuthPort>
+    <HmiInitial>14.2.116.1</HmiInitial>
+    <HmiRecent>14.3.683.1</HmiRecent>
+    <HmiServerNodeAdvancedView>False</HmiServerNodeAdvancedView>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <HmiCommunicationServerPublicPort>3443</HmiCommunicationServerPublicPort>
+    <HmiViewportHeight>515</HmiViewportHeight>
+    <HmiViewportWidth>1280</HmiViewportWidth>
+    <TcHmi_Beckhoff_TwinCAT_HMI_RecipeManagement_IncludedInSolution>True</TcHmi_Beckhoff_TwinCAT_HMI_RecipeManagement_IncludedInSolution>
+    <TcHmi_TcHmiRangeSlider_IncludedInSolution>True</TcHmi_TcHmiRangeSlider_IncludedInSolution>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TwinCATHmi_Tasks>$(TcHmiDirectory)\MSBuild\Beckhoff.TwinCAT.HMI.tasks</TwinCATHmi_Tasks>
+    <TwinCATHmi_Targets>$(TcHmiDirectory)\MSBuild\Beckhoff.TwinCAT.HMI.targets</TwinCATHmi_Targets>
+  </PropertyGroup>
+  <Import Project="$(TwinCATHmi_Tasks)" />
+  <Import Project="$(TwinCATHmi_Targets)" />
+  <PropertyGroup>
+    <!-- 
+	      Values: 
+		    VisualStudio := default Microsoft.TypeScript.MsBuild behaviour
+		    Global := the installation directory provided by Windows' registry is used
+	    -->
+    <_TcHmiNodeJsMode>Global</_TcHmiNodeJsMode>
+    <_TcHmiNodeJsMode Condition="'$(_TcHmiNodeJsMode)' == ''">Global</_TcHmiNodeJsMode>
+    <_TcHmiNodePath Condition="'$(_TcHmiNodeJsMode)' == 'Global'">$(registry:HKEY_LOCAL_MACHINE\SOFTWARE\Node.js@InstallPath)</_TcHmiNodePath>
+    <_TcHmiNodePath Condition="'$(_TcHmiNodeJsMode)' == 'Global' AND '$(_TcHmiNodePath)' == '' AND Exists('C:\Program Files\nodejs\')">C:\Program Files\nodejs\</_TcHmiNodePath>
+    <_TcHmiNodePath Condition="'$(_TcHmiNodeJsMode)' == 'Global' AND '$(_TcHmiNodePath)' == '' AND Exists('C:\Program Files (x86)\nodejs\')">C:\Program Files (x86)\nodejs\</_TcHmiNodePath>
+  </PropertyGroup>
+  <Target Name="ReTargetNodePath" Condition="'$(_TcHmiNodePath)' != ''" BeforeTargets="$(CompileDependsOn)">
+    <PropertyGroup>
+      <NodePath>$(_TcHmiNodePath)</NodePath>
+    </PropertyGroup>
+  </Target>
+  <PropertyGroup>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>56fb766c-1c54-4355-8eba-d6300b54c913</ProjectGuid>
+    <RootNamespace>TwinCAT3HmiProject</RootNamespace>
+    <AssemblyName>TwinCAT3HmiProject</AssemblyName>
+    <Configuration Condition=" '$(Configuration)' == '' ">Release</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">TwinCAT HMI</Platform>
+  </PropertyGroup>
+  <!-- Any CPU -->
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|TwinCAT HMI' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>TwinCAT HMI</PlatformTarget>
+    <DefaultNamespace>MicAs500_DemoHmi</DefaultNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|TwinCAT HMI' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>TwinCAT HMI</PlatformTarget>
+    <DefaultNamespace>MicAs500_DemoHmi</DefaultNamespace>
+  </PropertyGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" Condition="'$(RestoreProjectStyle)' == 'PackageReference'" />
+  <PropertyGroup>
+    <PreBuildEventDependsOn />
+  </PropertyGroup>
+  <Target Name="PreBuildEvent" Condition="'$(PreBuildEvent)'!=''" DependsOnTargets="$(PreBuildEventDependsOn)">
+    <Exec WorkingDirectory="$(OutDir)" Command="$(PreBuildEvent)" />
+  </Target>
+  <PropertyGroup>
+    <PostBuildEventDependsOn />
+  </PropertyGroup>
+  <Target Name="PostBuildEvent" Condition="'$(PostBuildEvent)' != '' and ('$(RunPostBuildEvent)'=='Always' or '$(RunPostBuildEvent)'=='OnOutputUpdated')" DependsOnTargets="$(PostBuildEventDependsOn)">
+    <Exec WorkingDirectory="$(OutDir)" Command="$(PostBuildEvent)" />
+  </Target>
+  <Target Name="GetFrameworkPaths" />
+  <PropertyGroup>
+    <BuiltProjectOutputGroupDependsOn>
+			PreBuildEvent;
+			CoreBuild;
+			PostBuildEvent
+		</BuiltProjectOutputGroupDependsOn>
+    <CleanDependsOn>
+			BaseClean
+		</CleanDependsOn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TcHmi_ProjectDirectory Condition="'$(TcHmi_ProjectDirectory)' == ''">$(MSBuildProjectDirectory)</TcHmi_ProjectDirectory>
+    <TcHmi_ServerAddress Condition="'$(TcHmi_ServerAddress)' == ''">127.0.0.1</TcHmi_ServerAddress>
+    <TcHmi_ServerPort Condition="'$(TcHmi_ServerPort)' == ''">1010</TcHmi_ServerPort>
+  </PropertyGroup>
+  <Target Name="CoreBuild">
+    <TcHmiMSBuild.Publish.TcHmiBuild TaskAction="Clean" ProjectDirectory="$(TcHmi_ProjectDirectory)" OutputPath="$(OutputPath)" />
+    <TcHmiMSBuild.Publish.TcHmiBuild TaskAction="Build" ProjectDirectory="$(TcHmi_ProjectDirectory)" OutputPath="$(OutputPath)" ProjectFiles="@(Content)" VirtualMappings="$(TcHmi_VirtualMappings)" PostProcessing="$(HmiPostProcessing)" />
+    <TcHmiMSBuild.Publish.TcHmiGenerator TaskAction="EntryPage" ProjectDirectory="$(TcHmi_ProjectDirectory)" OutputPath="$(OutputPath)" TcHmiServerAddress="$(TcHmi_ServerAddress)" TcHmiServerPort="$(TcHmi_ServerPort)">
+      <Output TaskParameter="Result" PropertyName="TaskResult0" />
+    </TcHmiMSBuild.Publish.TcHmiGenerator>
+    <Message Text="Generating the Default.html within OutputPath('$(OutputPath)'): $(TaskResult0)" />
+  </Target>
+  <Target Name="Build" DependsOnTargets="$(BuiltProjectOutputGroupDependsOn)" />
+  <Target Name="Clean" DependsOnTargets="$(CleanDependsOn)" />
+  <Target Name="ReBuild" DependsOnTargets="Clean; Build" />
+  <ItemGroup>
+    <Content Include="Components\curingStation.usercontrol">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Components\curingStation.usercontrol.json">
+      <SubType>Content</SubType>
+      <DependentUpon>Components\curingStation.usercontrol</DependentUpon>
+    </Content>
+    <Content Include="Images\1160356.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\AL-81983_INFEED-V1-Photoroom.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\AL-81983_INFEED-V2-Photoroom.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\AL-82026_1_5.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\AL-82026_6_10.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\AssemblyImages1_5\AL-200613 motors 1-5.PNG">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\AssemblyImages1_5\AL-82027 motors 1-5.PNG">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\Designer (3).png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\icons8-info-192.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\MainBg\Etusivu tausta ruudukolla.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\MainBg\oik_ylapalkki_harmaa.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\MainBg\Valikkosivu tausta ruudukolla.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\MainBg\vas_ylapalkki_harmaa.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Folder Include="Fonts\" />
+    <Folder Include="Images" />
+    <Folder Include="Images\Manifest" />
+    <Folder Include="Images\MenuImages" />
+    <Folder Include="Images\MainBg" />
+    <Folder Include="Images\AssemblyImages1_5" />
+    <Folder Include="Imports" />
+    <Folder Include="Imports\Images" />
+    <Folder Include="Imports\Videos" />
+    <Folder Include="KeyboardLayouts\" />
+    <Folder Include="Localization" />
+    <Folder Include="Navi" />
+    <Folder Include="Navi\Popup" />
+    <Folder Include="Components" />
+    <Folder Include="Server\TcHmiEcDiagnostics" />
+    <Folder Include="Server\TcHmiEventLogger" />
+    <Folder Include="Server\TcHmiRecipeManagement" />
+    <Folder Include="Themes" />
+    <Folder Include="Themes\Base-Dark\Images\" />
+    <Folder Include="Themes\Base\" />
+    <Folder Include="Themes\Base-Dark\" />
+    <Folder Include="Server">
+      <WorkingDirectory>GalvoMirror_UI</WorkingDirectory>
+    </Folder>
+    <Folder Include="Properties" />
+    <Content Include=".eslintrc.json">
+      <Visible>false</Visible>
+    </Content>
+    <Content Include="Images\MainBg\Home symbol.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\MainBg\Ikkuna valittu.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\MainBg\Keskikaari.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\MainBg\Laitakaari.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\MainBg\Menu symbol.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\MainBg\MICAS taustakuva.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\MainBg\Ruudukko_alkuperäinen.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\MainBg\Ruudukko_valkoinen_etusivu.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\MainBg\Ruudukko_valkoinen_valikkosivu.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\MenuImages\69219-AB_INFEED.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\MenuImages\69219-AB_INFEED_taustaton.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\MenuImages\6933631.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\MenuImages\AL-86069_INFEED.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\MenuImages\AL-86069_INFEED_taustaton.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\MenuImages\Basler - Camera.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\MenuImages\Config_valkoinen.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\MenuImages\Cure Station.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\MenuImages\Designer.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\MenuImages\English.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\MenuImages\Etukuljettimet.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\MenuImages\Etusivu tausta ruudukolla.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\MenuImages\German.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\MenuImages\Germany.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\MenuImages\Gripper_valkoinen.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\MenuImages\HOME_1.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\MenuImages\HOME_1_Active.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\MenuImages\HOME_etusivu.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\MenuImages\HOME_valkoinen.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\MenuImages\Kiertonuolinappi_mp_3d.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\MenuImages\Kiertonuolinappi_mp_ei varjoa.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\MenuImages\Kiertonuolinappi_vp_3d.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\MenuImages\Kiertonuolinappi_vp_ei varjoa.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\MenuImages\Kolmio_huutomerkki_HUOMIO_varjolla.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\MenuImages\Koordinaattitaulu.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\MenuImages\Lineaari + robotti.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\MenuImages\Lineaari + robotti_2.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\MenuImages\Mecademic MSC500 (1).png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\MenuImages\Mecademic MSC500.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\MenuImages\MENU_1.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\MenuImages\MENU_1_Active.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\MenuImages\MENU_etusivu.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\MenuImages\Nuolinappi_1.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\MenuImages\Nuolinappi_1_D.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\MenuImages\Nuolinappi_1_L.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\MenuImages\Nuolinappi_1_R.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\MenuImages\Nuolinappi_2.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\MenuImages\Nuolinappi_3.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\MenuImages\Nuolinappi_4.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\MenuImages\Nuolinappi_D.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\MenuImages\Nuolinappi_ei varjoa.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\MenuImages\Nuolinappi_L.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\MenuImages\Nuolinappi_R.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\MenuImages\oik_ylapalkki_harmaa.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\MenuImages\Ponnahdusikkuna_1.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\MenuImages\Ponnahdusikkuna_1_rajattu.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\MenuImages\Ponnahdusikkuna_2.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\MenuImages\Power.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\MenuImages\Prassi.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\MenuImages\RESET_valkoinen.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\MenuImages\Robot.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\MenuImages\Saatovalikon tausta.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\MenuImages\Skararobot iso kuva.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\MenuImages\Status_valo_led keltainen.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\MenuImages\Status_valo_led punainen.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\MenuImages\Status_valo_led valkoinen.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\MenuImages\Status_valo_led vihrea.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\MenuImages\Suomi.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\MenuImages\Sylinteri.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\MenuImages\Sylinteri_Va.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\MenuImages\Symboli valittu - vihreat viivat.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\MenuImages\Test_valkoinen.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\MenuImages\Tool_valkoinen.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\MenuImages\Tyokalupaa.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\MenuImages\USA.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\MenuImages\user lock.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\MenuImages\user lock_LED_punainen.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\MenuImages\Valikkosivu tausta ruudukolla.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\MenuImages\Valo_kelt.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\MenuImages\Valo_pun.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\MenuImages\Valo_valk.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\MenuImages\Valo_vihr.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\MenuImages\VasYlapalkki.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\MenuImages\vas_ylapalkki_harmaa.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\MICAS tausta_08052025.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\Next nappi_pyöreä.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\Nuoli.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\Pl_1.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\Pl_2.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\P_1.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\P_2.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\small_gear.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\START nappi_pyöreä.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\S_1.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Images\S_2.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="LoginPage1.html">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Navi\Cameras.content">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Navi\EventLogger.content">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Navi\GlueScreen.content">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Navi\LinearAxis.content">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Navi\MainContents.content">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Navi\ConveyorsContents.content">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Navi\ManualRobotControl.content">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Navi\Popup\Cam1ConfPopup.content">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Navi\Popup\Cam2ConfPopup.content">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Navi\Popup\ToolVerifyPopup.content">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Navi\RecipeScreen1.content">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Navi\RecipeScreen2.content">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Navi\SCARAContents.content">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Server\ADS\ADS.Config.default.json">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Server\ADS\ADS.Config.default.json" />
+    <Content Include="Server\TcHmiEcDiagnostics\TcHmiEcDiagnostics.Config.default.json">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Server\TcHmiEcDiagnostics\TcHmiEcDiagnostics.Config.remote.json">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Server\TcHmiEcDiagnostics\TcHmiEcDiagnostics.Storage.json">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Server\TcHmiEventLogger\TcHmiEventLogger.Config.default.json">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Server\TcHmiEventLogger\TcHmiEventLogger.Config.remote.json">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Server\TcHmiEventLogger\TcHmiEventLogger.Storage.json">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Server\TcHmiLua\TcHmiLua.Config.default.json">
+      <SubType>Content</SubType>
+      <Visible>True</Visible>
+    </Content>
+    <Content Include="Server\TcHmiLua\TcHmiLua.Config.remote.json">
+      <SubType>Content</SubType>
+      <Visible>True</Visible>
+    </Content>
+    <Content Include="Server\TcHmiLua\TcHmiLua.Storage.json">
+      <SubType>Content</SubType>
+      <Visible>True</Visible>
+    </Content>
+    <Content Include="Server\TcHmiRecipeManagement\TcHmiRecipeManagement.Config.default.json">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Server\TcHmiRecipeManagement\TcHmiRecipeManagement.Config.remote.json">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Server\TcHmiRecipeManagement\TcHmiRecipeManagement.Storage.json">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Server\TcHmiSqliteLogger\TcHmiSqliteLogger.Config.default.json">
+      <SubType>Content</SubType>
+      <Visible>True</Visible>
+    </Content>
+    <Content Include="Server\TcHmiSqliteLogger\TcHmiSqliteLogger.Config.remote.json">
+      <SubType>Content</SubType>
+      <Visible>True</Visible>
+    </Content>
+    <Content Include="Server\TcHmiSqliteLogger\TcHmiSqliteLogger.Storage.json">
+      <SubType>Content</SubType>
+      <Visible>True</Visible>
+    </Content>
+    <Content Include="Server\TcHmiUserManagement\TcHmiUserManagement.Config.default.json">
+      <SubType>Content</SubType>
+      <Visible>True</Visible>
+    </Content>
+    <Content Include="Server\TcHmiUserManagement\TcHmiUserManagement.Config.remote.json">
+      <SubType>Content</SubType>
+      <Visible>True</Visible>
+    </Content>
+    <Content Include="Server\TcHmiUserManagement\TcHmiUserManagement.Storage.json">
+      <SubType>Content</SubType>
+      <Visible>True</Visible>
+    </Content>
+    <Content Include="Themes\IINedition\IINedition.theme">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Themes\IINedition\TcHmi.Controls.Beckhoff.TcHmiDatagrid\Images\checkbox.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Themes\IINedition\TcHmi.Controls.Beckhoff.TcHmiDatagrid\Images\datetimepicker_normal.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Themes\IINedition\TcHmi.Controls.Beckhoff.TcHmiDatagrid\Images\datetimepicker_pressed.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Themes\IINedition\TcHmi.Controls.Beckhoff.TcHmiDatagrid\Images\dropdown.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Themes\IINedition\TcHmi.Controls.Beckhoff.TcHmiDatagrid\Images\sort.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Themes\IINedition\TcHmi.Controls.Beckhoff.TcHmiDatagrid\Images\sort_asc.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Themes\IINedition\TcHmi.Controls.Beckhoff.TcHmiDatagrid\Images\sort_desc.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Themes\IINedition\TcHmi.Controls.Beckhoff.TcHmiDatagrid\Images\timespanpicker_normal.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Themes\IINedition\TcHmi.Controls.Beckhoff.TcHmiDatagrid\Images\timespanpicker_pressed.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Themes\IINedition\TcHmi.Controls.Beckhoff.TcHmiDatagrid\Style.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Themes\IINedition\TcHmi.Controls.Beckhoff.TcHmiEventGrid\Images\add-active.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Themes\IINedition\TcHmi.Controls.Beckhoff.TcHmiEventGrid\Images\add.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Themes\IINedition\TcHmi.Controls.Beckhoff.TcHmiEventGrid\Images\alarm.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Themes\IINedition\TcHmi.Controls.Beckhoff.TcHmiEventGrid\Images\columns-active.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Themes\IINedition\TcHmi.Controls.Beckhoff.TcHmiEventGrid\Images\columns.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Themes\IINedition\TcHmi.Controls.Beckhoff.TcHmiEventGrid\Images\confirm-active.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Themes\IINedition\TcHmi.Controls.Beckhoff.TcHmiEventGrid\Images\confirm.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Themes\IINedition\TcHmi.Controls.Beckhoff.TcHmiEventGrid\Images\confirmall-active.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Themes\IINedition\TcHmi.Controls.Beckhoff.TcHmiEventGrid\Images\confirmall.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Themes\IINedition\TcHmi.Controls.Beckhoff.TcHmiEventGrid\Images\critical.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Themes\IINedition\TcHmi.Controls.Beckhoff.TcHmiEventGrid\Images\date-time-active.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Themes\IINedition\TcHmi.Controls.Beckhoff.TcHmiEventGrid\Images\date-time.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Themes\IINedition\TcHmi.Controls.Beckhoff.TcHmiEventGrid\Images\deselect-active.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Themes\IINedition\TcHmi.Controls.Beckhoff.TcHmiEventGrid\Images\deselect-selected.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Themes\IINedition\TcHmi.Controls.Beckhoff.TcHmiEventGrid\Images\deselect.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Themes\IINedition\TcHmi.Controls.Beckhoff.TcHmiEventGrid\Images\error.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Themes\IINedition\TcHmi.Controls.Beckhoff.TcHmiEventGrid\Images\filter-active.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Themes\IINedition\TcHmi.Controls.Beckhoff.TcHmiEventGrid\Images\filter.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Themes\IINedition\TcHmi.Controls.Beckhoff.TcHmiEventGrid\Images\group-active.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Themes\IINedition\TcHmi.Controls.Beckhoff.TcHmiEventGrid\Images\group.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Themes\IINedition\TcHmi.Controls.Beckhoff.TcHmiEventGrid\Images\info.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Themes\IINedition\TcHmi.Controls.Beckhoff.TcHmiEventGrid\Images\message.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Themes\IINedition\TcHmi.Controls.Beckhoff.TcHmiEventGrid\Images\move-down-active.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Themes\IINedition\TcHmi.Controls.Beckhoff.TcHmiEventGrid\Images\move-down.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Themes\IINedition\TcHmi.Controls.Beckhoff.TcHmiEventGrid\Images\move-up-active.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Themes\IINedition\TcHmi.Controls.Beckhoff.TcHmiEventGrid\Images\move-up.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Themes\IINedition\TcHmi.Controls.Beckhoff.TcHmiEventGrid\Images\remove-active.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Themes\IINedition\TcHmi.Controls.Beckhoff.TcHmiEventGrid\Images\remove.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Themes\IINedition\TcHmi.Controls.Beckhoff.TcHmiEventGrid\Images\select-active.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Themes\IINedition\TcHmi.Controls.Beckhoff.TcHmiEventGrid\Images\select.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Themes\IINedition\TcHmi.Controls.Beckhoff.TcHmiEventGrid\Images\sort-active.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Themes\IINedition\TcHmi.Controls.Beckhoff.TcHmiEventGrid\Images\sort.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Themes\IINedition\TcHmi.Controls.Beckhoff.TcHmiEventGrid\Images\ungroup-active.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Themes\IINedition\TcHmi.Controls.Beckhoff.TcHmiEventGrid\Images\ungroup.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Themes\IINedition\TcHmi.Controls.Beckhoff.TcHmiEventGrid\Images\verbose.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Themes\IINedition\TcHmi.Controls.Beckhoff.TcHmiEventGrid\Images\warning.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Themes\IINedition\TcHmi.Controls.Beckhoff.TcHmiEventGrid\Style.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Themes\IINedition\TcHmi.Controls.Beckhoff.TcHmiEventGrid\Style2.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Themes\IINedition\TcHmi.Controls.Beckhoff.TcHmiRecipeSelect\Images\folder.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Themes\IINedition\TcHmi.Controls.Beckhoff.TcHmiRecipeSelect\Images\folder_active.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Themes\IINedition\TcHmi.Controls.Beckhoff.TcHmiRecipeSelect\Images\recipe.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Themes\IINedition\TcHmi.Controls.Beckhoff.TcHmiRecipeSelect\Images\recipe_active.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Themes\IINedition\TcHmi.Controls.Beckhoff.TcHmiRecipeSelect\Style.css">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="tsconfig.tpl.json">
+      <SubType>Content</SubType>
+      <Visible>true</Visible>
+    </Content>
+    <Content Include="tsconfig.json">
+      <SubType>Content</SubType>
+      <Visible>true</Visible>
+      <DependentUpon>tsconfig.tpl.json</DependentUpon>
+    </Content>
+    <Content Include="packages.config">
+      <SubType>Content</SubType>
+      <Visible>true</Visible>
+    </Content>
+    <Content Include="packages.xsd">
+      <SubType>Content</SubType>
+      <Visible>false</Visible>
+    </Content>
+    <Content Include="Properties\tchmiconfig.json">
+      <SubType>Content</SubType>
+      <Visible>true</Visible>
+    </Content>
+    <Content Include="Properties\tchmi.framework.Schema.json">
+      <SubType>Content</SubType>
+      <Visible>true</Visible>
+    </Content>
+    <Content Include="Properties\tchmi.project.Schema.json">
+      <SubType>Content</SubType>
+      <Visible>true</Visible>
+    </Content>
+    <Content Include="Properties\tchmipublish.config.json">
+      <SubType>Content</SubType>
+      <Visible>true</Visible>
+    </Content>
+    <Content Include="Properties\tchmimanifest.json">
+      <SubType>Content</SubType>
+      <Visible>true</Visible>
+    </Content>
+    <Content Include="Properties\Default.tpl">
+      <SubType>Content</SubType>
+      <Visible>true</Visible>
+    </Content>
+    <Content Include=".tfignore">
+      <SubType>Content</SubType>
+      <Visible>false</Visible>
+    </Content>
+    <Content Include=".gitignore">
+      <SubType>Content</SubType>
+      <Visible>false</Visible>
+    </Content>
+    <Content Include="Fonts\Fonts.css">
+      <SubType>Content</SubType>
+      <Visible>true</Visible>
+    </Content>
+    <Content Include="Fonts\Roboto-Condensed-webfont.woff">
+      <SubType>Content</SubType>
+      <Visible>true</Visible>
+    </Content>
+    <Content Include="Themes\Base\Base.theme">
+      <SubType>Content</SubType>
+      <Visible>true</Visible>
+    </Content>
+    <Content Include="Themes\Base\BaseStyle.css">
+      <SubType>Content</SubType>
+      <Visible>true</Visible>
+    </Content>
+    <Content Include="Themes\Base\Images\Splash-320x534.png">
+      <SubType>Content</SubType>
+      <Visible>true</Visible>
+    </Content>
+    <Content Include="Themes\Base\Images\Splash-420x200.png">
+      <SubType>Content</SubType>
+      <Visible>true</Visible>
+    </Content>
+    <Content Include="Themes\Base\Images\Splash-800x600.png">
+      <SubType>Content</SubType>
+      <Visible>true</Visible>
+    </Content>
+    <Content Include="Themes\Base-Dark\Base-Dark.theme">
+      <SubType>Content</SubType>
+      <Visible>true</Visible>
+    </Content>
+    <Content Include="Themes\Base-Dark\Base-DarkStyle.css">
+      <SubType>Content</SubType>
+      <Visible>true</Visible>
+    </Content>
+    <Content Include="Themes\Base-Dark\Images\Splash-320x534.png">
+      <SubType>Content</SubType>
+      <Visible>true</Visible>
+    </Content>
+    <Content Include="Themes\Base-Dark\Images\Splash-420x200.png">
+      <SubType>Content</SubType>
+      <Visible>true</Visible>
+    </Content>
+    <Content Include="Themes\Base-Dark\Images\Splash-800x600.png">
+      <SubType>Content</SubType>
+      <Visible>true</Visible>
+    </Content>
+    <Content Include="Localization\de.localization">
+      <SubType>Content</SubType>
+      <Visible>true</Visible>
+    </Content>
+    <Content Include="Localization\en.localization">
+      <SubType>Content</SubType>
+      <Visible>true</Visible>
+    </Content>
+    <Content Include="KeyboardLayouts\German - compact.keyboard.json">
+      <SubType>Content</SubType>
+      <Visible>true</Visible>
+    </Content>
+    <Content Include="KeyboardLayouts\US - compact.keyboard.json">
+      <SubType>Content</SubType>
+      <Visible>true</Visible>
+    </Content>
+    <Content Include="KeyboardLayouts\Numpad (plusminus).keyboard.json">
+      <SubType>Content</SubType>
+      <Visible>true</Visible>
+    </Content>
+    <Content Include="Images\Favicon.ico">
+      <SubType>Content</SubType>
+      <Visible>true</Visible>
+    </Content>
+    <Content Include="Images\Beckhoff_Logo.svg">
+      <SubType>Content</SubType>
+      <Visible>true</Visible>
+    </Content>
+    <Content Include="Images\Manifest\launcher-icon-0-75x.png">
+      <SubType>Content</SubType>
+      <Visible>true</Visible>
+    </Content>
+    <Content Include="Images\Manifest\launcher-icon-1-5x.png">
+      <SubType>Content</SubType>
+      <Visible>true</Visible>
+    </Content>
+    <Content Include="Images\Manifest\launcher-icon-1x.png">
+      <SubType>Content</SubType>
+      <Visible>true</Visible>
+    </Content>
+    <Content Include="Images\Manifest\launcher-icon-2x.png">
+      <SubType>Content</SubType>
+      <Visible>true</Visible>
+    </Content>
+    <Content Include="Images\Manifest\launcher-icon-3x.png">
+      <SubType>Content</SubType>
+      <Visible>true</Visible>
+    </Content>
+    <Content Include="Images\Manifest\launcher-icon-4x.png">
+      <SubType>Content</SubType>
+      <Visible>true</Visible>
+    </Content>
+    <Content Include="Desktop.view">
+      <SubType>Content</SubType>
+      <Visible>true</Visible>
+    </Content>
+    <Folder Include="Server\ADS\" />
+    <Folder Include="Server\TcHmiLua\" />
+    <Folder Include="Server\TcHmiSqliteLogger\" />
+    <Folder Include="Server\TcHmiSrv\" />
+    <Folder Include="Server\TcHmiUserManagement\" />
+    <Content Include="Server\ADS\ADS.Config.default.json">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Server\ADS\ADS.Config.remote.json">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Server\ADS\ADS.Storage.json">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Server\TcHmiSrv\TcHmiSrv.Config.default.json">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Server\TcHmiSrv\TcHmiSrv.Config.remote.json">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Server\TcHmiSrv\TcHmiSrv.Storage.json">
+      <SubType>Content</SubType>
+    </Content>
+    <Folder Include="Themes\Base\Images\" />
+    <Folder Include="Themes\IINedition\" />
+    <Folder Include="Themes\IINedition\TcHmi.Controls.Beckhoff.TcHmiDatagrid\" />
+    <Folder Include="Themes\IINedition\TcHmi.Controls.Beckhoff.TcHmiDatagrid\Images\" />
+    <Folder Include="Themes\IINedition\TcHmi.Controls.Beckhoff.TcHmiEventGrid\" />
+    <Folder Include="Themes\IINedition\TcHmi.Controls.Beckhoff.TcHmiEventGrid\Images\" />
+    <Folder Include="Themes\IINedition\TcHmi.Controls.Beckhoff.TcHmiRecipeSelect\" />
+    <Folder Include="Themes\IINedition\TcHmi.Controls.Beckhoff.TcHmiRecipeSelect\Images\" />
+  </ItemGroup>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.TypeScript.MSBuild.5.3.2\build\Microsoft.TypeScript.MSBuild.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.TypeScript.MSBuild.5.3.2\build\Microsoft.TypeScript.MSBuild.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.TypeScript.MSBuild.5.3.2\build\Microsoft.TypeScript.MSBuild.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.TypeScript.MSBuild.5.3.2\build\Microsoft.TypeScript.MSBuild.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.TypeScript.MSBuild.5.9.3\build\Microsoft.TypeScript.MSBuild.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.TypeScript.MSBuild.5.9.3\build\Microsoft.TypeScript.MSBuild.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.TypeScript.MSBuild.5.9.3\build\Microsoft.TypeScript.MSBuild.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.TypeScript.MSBuild.5.9.3\build\Microsoft.TypeScript.MSBuild.targets'))" />
+  </Target>
+  <Import Project="..\packages\Microsoft.TypeScript.MSBuild.5.3.2\build\Microsoft.TypeScript.MSBuild.targets" Condition="Exists('..\packages\Microsoft.TypeScript.MSBuild.5.3.2\build\Microsoft.TypeScript.MSBuild.targets')" />
+  <Import Project="..\packages\Microsoft.TypeScript.MSBuild.5.9.3\build\Microsoft.TypeScript.MSBuild.targets" Condition="Exists('..\packages\Microsoft.TypeScript.MSBuild.5.9.3\build\Microsoft.TypeScript.MSBuild.targets')" />
+</Project>
