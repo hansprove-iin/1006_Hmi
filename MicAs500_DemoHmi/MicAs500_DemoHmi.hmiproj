@@ -135,6 +135,27 @@
   <Target Name="Clean" DependsOnTargets="$(CleanDependsOn)" />
   <Target Name="ReBuild" DependsOnTargets="Clean; Build" />
   <ItemGroup>
+    <Content Include="Components\AI\AnalogInput.usercontrol">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Components\AI\AnalogInput.usercontrol.json">
+      <SubType>Content</SubType>
+      <DependentUpon>Components\AI\AnalogInput.usercontrol</DependentUpon>
+    </Content>
+    <Content Include="Components\AI\AnalogInputLink.usercontrol">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Components\AI\AnalogInputLink.usercontrol.json">
+      <SubType>Content</SubType>
+      <DependentUpon>Components\AI\AnalogInputLink.usercontrol</DependentUpon>
+    </Content>
+    <Content Include="Components\AI\AnalogInputSettings.usercontrol">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Components\AI\AnalogInputSettings.usercontrol.json">
+      <SubType>Content</SubType>
+      <DependentUpon>Components\AI\AnalogInputSettings.usercontrol</DependentUpon>
+    </Content>
     <Content Include="Components\ControlSignals\ControlSignal.usercontrol">
       <SubType>Content</SubType>
     </Content>
@@ -204,6 +225,27 @@
     <Content Include="Components\Cylinder\MyToggleButton.usercontrol.json">
       <SubType>Content</SubType>
       <DependentUpon>Components\Cylinder\MyToggleButton.usercontrol</DependentUpon>
+    </Content>
+    <Content Include="Components\DI\DigitalInput.usercontrol">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Components\DI\DigitalInput.usercontrol.json">
+      <SubType>Content</SubType>
+      <DependentUpon>Components\DI\DigitalInput.usercontrol</DependentUpon>
+    </Content>
+    <Content Include="Components\DI\DigitalInputSettings.usercontrol">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Components\DI\DigitalInputSettings.usercontrol.json">
+      <SubType>Content</SubType>
+      <DependentUpon>Components\DI\DigitalInputSettings.usercontrol</DependentUpon>
+    </Content>
+    <Content Include="Components\DI\LED.usercontrol">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Components\DI\LED.usercontrol.json">
+      <SubType>Content</SubType>
+      <DependentUpon>Components\DI\LED.usercontrol</DependentUpon>
     </Content>
     <Content Include="Components\scripts\adjustCuringStationIndex.function.json">
       <SubType>Content</SubType>
@@ -317,6 +359,8 @@
     <Folder Include="Components\ControlSignals" />
     <Folder Include="Components\Cylinder" />
     <Folder Include="Components\CuringStation" />
+    <Folder Include="Components\DI" />
+    <Folder Include="Components\AI" />
     <Folder Include="Components\scripts" />
     <Folder Include="Fonts\" />
     <Folder Include="Images" />

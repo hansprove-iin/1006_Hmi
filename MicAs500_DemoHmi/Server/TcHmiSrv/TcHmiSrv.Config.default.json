@@ -37,6 +37,14 @@
                 "minItems": 1,
                 "type": "array"
             },
+            "ADS-PLC1.ARRAY_0..1_OF-IIN_Base.ST_CYL_HMI": {
+                "items": {
+                    "$ref": "tchmi:server#/definitions/ADS-PLC1.IIN_Base.ST_CYL_HMI"
+                },
+                "maxItems": 2,
+                "minItems": 2,
+                "type": "array"
+            },
             "ADS-PLC1.ARRAY_0..1_OF-IIN_Base.ST_DI_HMI": {
                 "items": {
                     "$ref": "tchmi:server#/definitions/ADS-PLC1.IIN_Base.ST_DI_HMI"
@@ -1131,6 +1139,373 @@
                 ],
                 "type": "object"
             },
+            "ADS-PLC1.IIN_Base.ST_CONTROL_SIGNALS_IN": {
+                "additionalProperties": false,
+                "properties": {
+                    "autoReset": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "comment": "Auto reset coming from FB_ControlSignalsV2/iAutoReset",
+                                "propertyOrder": 9
+                            }
+                        ]
+                    },
+                    "externalReset": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "comment": "External reset coming from FB_ControlSignalsV2/iExternalReset",
+                                "propertyOrder": 8
+                            }
+                        ]
+                    },
+                    "hardReset": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "comment": "Hard reset button (a single PLC pulse will be generated from this)",
+                                "propertyOrder": 7
+                            }
+                        ]
+                    },
+                    "manualMode": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "comment": "Auto/Manual",
+                                "propertyOrder": 1
+                            }
+                        ]
+                    },
+                    "pauseRequest": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "comment": "Will let ongoing operations finish nicely, When TRUE = must go to Pause, when FALSE, may continue",
+                                "propertyOrder": 3
+                            }
+                        ]
+                    },
+                    "reset": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "comment": "Reset button (a single PLC pulse will be generated from this)",
+                                "propertyOrder": 6
+                            }
+                        ]
+                    },
+                    "restart": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "comment": "Placeholder for later use",
+                                "propertyOrder": 5
+                            }
+                        ]
+                    },
+                    "serviceMode": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "propertyOrder": 2
+                            }
+                        ]
+                    },
+                    "stopImmediately": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "comment": "Placeholder for later use",
+                                "propertyOrder": 4
+                            }
+                        ]
+                    }
+                },
+                "required": [
+                    "manualMode",
+                    "serviceMode",
+                    "pauseRequest",
+                    "stopImmediately",
+                    "restart",
+                    "reset",
+                    "hardReset",
+                    "externalReset",
+                    "autoReset"
+                ],
+                "type": "object"
+            },
+            "ADS-PLC1.IIN_Base.ST_CONTROL_SIGNALS_OUT": {
+                "additionalProperties": false,
+                "properties": {
+                    "auto": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "comment": "TRUE when in automatic mode",
+                                "propertyOrder": 1
+                            }
+                        ]
+                    },
+                    "autoOffPulse": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "comment": "TRUE for 1 PLC cycle when switching AUTO OFF",
+                                "propertyOrder": 7
+                            }
+                        ]
+                    },
+                    "autoPulse": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "comment": "Single PLC cycle pulse when switching to AUTO",
+                                "propertyOrder": 4
+                            }
+                        ]
+                    },
+                    "extendedHardResetPulse": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "comment": "Extended hard reset pulse, eg. for external systems",
+                                "propertyOrder": 16
+                            }
+                        ]
+                    },
+                    "extendedResetPulse": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "comment": "Extended reset pulse, eg. for external systems",
+                                "propertyOrder": 15
+                            }
+                        ]
+                    },
+                    "externalManualActive": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "propertyOrder": 17
+                            }
+                        ]
+                    },
+                    "failingToSwitchToAuto": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "propertyOrder": 18
+                            }
+                        ]
+                    },
+                    "hardResetPulse": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "comment": "Single PLC cycle pulse for hard reset (wipe out everything)",
+                                "propertyOrder": 14
+                            }
+                        ]
+                    },
+                    "manual": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "comment": "TRUE when in manual mode",
+                                "propertyOrder": 2
+                            }
+                        ]
+                    },
+                    "manualOffPulse": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "comment": "TRUE for 1 PLC cycle when switching MANUAL OFF",
+                                "propertyOrder": 8
+                            }
+                        ]
+                    },
+                    "manualPulse": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "comment": "Single PLC cycle pulse when switching to MANUAL",
+                                "propertyOrder": 5
+                            }
+                        ]
+                    },
+                    "pauseRequest": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "comment": "TRUE when pause requested",
+                                "propertyOrder": 10
+                            }
+                        ]
+                    },
+                    "resetPulse": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "comment": "Single PLC cycle pulse for resetting (after error)",
+                                "propertyOrder": 13
+                            }
+                        ]
+                    },
+                    "restart": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "comment": "Single PLC cycle pulse",
+                                "propertyOrder": 12
+                            }
+                        ]
+                    },
+                    "service": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "comment": "TRUE when in service mode",
+                                "propertyOrder": 3
+                            }
+                        ]
+                    },
+                    "serviceOffPulse": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "comment": "TRUE for 1 PLC cycle when switching SERVICE OFF",
+                                "propertyOrder": 9
+                            }
+                        ]
+                    },
+                    "servicePulse": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "comment": "Single PLC cycle pulse when switching to SERVICE",
+                                "propertyOrder": 6
+                            }
+                        ]
+                    },
+                    "stopImmediately": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "comment": "Single PLC cycle pulse",
+                                "propertyOrder": 11
+                            }
+                        ]
+                    }
+                },
+                "required": [
+                    "auto",
+                    "manual",
+                    "service",
+                    "autoPulse",
+                    "manualPulse",
+                    "servicePulse",
+                    "autoOffPulse",
+                    "manualOffPulse",
+                    "serviceOffPulse",
+                    "pauseRequest",
+                    "stopImmediately",
+                    "restart",
+                    "resetPulse",
+                    "hardResetPulse",
+                    "extendedResetPulse",
+                    "extendedHardResetPulse",
+                    "externalManualActive",
+                    "failingToSwitchToAuto"
+                ],
+                "type": "object"
+            },
+            "ADS-PLC1.IIN_Base.ST_CS_HMI": {
+                "additionalProperties": false,
+                "properties": {
+                    "in": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:server#/definitions/ADS-PLC1.IIN_Base.ST_CONTROL_SIGNALS_IN"
+                            },
+                            {
+                                "propertyOrder": 2
+                            }
+                        ]
+                    },
+                    "out": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:server#/definitions/ADS-PLC1.IIN_Base.ST_CONTROL_SIGNALS_OUT"
+                            },
+                            {
+                                "propertyOrder": 1
+                            }
+                        ]
+                    }
+                },
+                "required": [
+                    "out",
+                    "in"
+                ],
+                "type": "object"
+            },
             "ADS-PLC1.IIN_Base.ST_CYL_HMI": {
                 "additionalProperties": false,
                 "properties": {
@@ -2155,10 +2530,10 @@
             "ADS-PLC1.ST_CURING_STATION_HMI": {
                 "additionalProperties": false,
                 "properties": {
-                    "gripper": {
+                    "cyls": {
                         "allOf": [
                             {
-                                "$ref": "tchmi:server#/definitions/ADS-PLC1.IIN_Base.ST_CYL_HMI"
+                                "$ref": "tchmi:server#/definitions/ADS-PLC1.ARRAY_0..1_OF-IIN_Base.ST_CYL_HMI"
                             },
                             {
                                 "propertyOrder": 4
@@ -2171,7 +2546,7 @@
                                 "$ref": "tchmi:server#/definitions/ADS-PLC1.ST_HEATER_HMI"
                             },
                             {
-                                "propertyOrder": 6
+                                "propertyOrder": 5
                             }
                         ]
                     },
@@ -2195,16 +2570,6 @@
                             }
                         ]
                     },
-                    "slider": {
-                        "allOf": [
-                            {
-                                "$ref": "tchmi:server#/definitions/ADS-PLC1.IIN_Base.ST_CYL_HMI"
-                            },
-                            {
-                                "propertyOrder": 5
-                            }
-                        ]
-                    },
                     "state": {
                         "allOf": [
                             {
@@ -2220,14 +2585,29 @@
                     "state",
                     "service",
                     "settings",
-                    "gripper",
-                    "slider",
+                    "cyls",
                     "heater"
                 ],
                 "type": "object"
             },
             "ADS-PLC1.ST_CURING_STATION_SERVICE": {
                 "additionalProperties": false,
+                "properties": {
+                    "enable": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "comment": "Setting on/off will enable the station",
+                                "propertyOrder": 1
+                            }
+                        ]
+                    }
+                },
+                "required": [
+                    "enable"
+                ],
                 "type": "object"
             },
             "ADS-PLC1.ST_CURING_STATION_SETTINGS": {
@@ -2403,22 +2783,6 @@
             },
             "ADS-PLC1.ST_HEATER_SERVICE": {
                 "additionalProperties": false,
-                "properties": {
-                    "enable": {
-                        "allOf": [
-                            {
-                                "$ref": "tchmi:general#/definitions/BOOL"
-                            },
-                            {
-                                "comment": "Setting on/off will enable the station",
-                                "propertyOrder": 1
-                            }
-                        ]
-                    }
-                },
-                "required": [
-                    "enable"
-                ],
                 "type": "object"
             },
             "ADS-PLC1.ST_HEATER_SETTINGS": {
@@ -3762,6 +4126,27 @@
             "OPTIONS": {},
             "SCHEMA": {
                 "function": true
+            },
+            "USEMAPPING": true
+        },
+        "ADS.PLC1.HMI.cs": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "HIDDEN": false,
+            "MAPPING": "PLC1::HMI::cs",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "addSymbol": true,
+                        "attributes": {
+                            "TcHmiSymbol.ShowRecursively": ""
+                        }
+                    },
+                    {
+                        "$ref": "tchmi:server#/definitions/ADS-PLC1.IIN_Base.ST_CS_HMI"
+                    }
+                ]
             },
             "USEMAPPING": true
         },
@@ -12431,6 +12816,7 @@
                 "ADS.PLC1.GVL.bStopCycle": 3,
                 "ADS.PLC1.GVL.bUIConvManualJog": 3,
                 "ADS.PLC1.GVL.nConveyorSpeedPr": 3,
+                "ADS.PLC1.HMI.cs": 3,
                 "ADS.PLC1.MAIN.UserInterfaceFunctions.Error": 3,
                 "ADS.PLC1.MAIN.UserInterfaceFunctions.Reset_Error": 3,
                 "ADS.PLC1.MAIN.UserInterfaceFunctions.RobotActivate": 3,

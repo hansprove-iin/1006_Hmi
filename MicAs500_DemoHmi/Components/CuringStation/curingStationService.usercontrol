@@ -1,13 +1,110 @@
 <div id="curingStation" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControl" data-tchmi-top="0" data-tchmi-left="0" data-tchmi-width="1657" data-tchmi-height="711" data-tchmi-width-unit="px" data-tchmi-height-unit="px" data-tchmi-creator-viewport-width="500" data-tchmi-creator-viewport-height="500">
 
-<div id="CylHorRightLink_3" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="152" data-tchmi-height-unit="px" data-tchmi-left="28" data-tchmi-left-unit="px" data-tchmi-target-user-control="Components/Cylinder/CylHorRightLink.usercontrol" data-tchmi-top="116" data-tchmi-top-unit="px" data-tchmi-width="478" data-tchmi-width-unit="px" data-tchmi-hmi="%pp%hmi::slider%/pp%">
+    <div id="CylHorRightLink_3" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="152" data-tchmi-height-unit="px" data-tchmi-left="10" data-tchmi-left-unit="px" data-tchmi-target-user-control="Components/Cylinder/CylHorRightLink.usercontrol" data-tchmi-top="94" data-tchmi-top-unit="px" data-tchmi-width="478" data-tchmi-width-unit="px" data-tchmi-hmi="%pp%hmi::cyls[0]%/pp%">
+    
+<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
+[
+  {
+    "event": "%ctx%owner::Id|EventRegistrationMode=Resolve%/ctx%.onMouseDown",
+    "actions": [
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%pp%_cylIdx%/pp%",
+        "value": {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:general#/definitions/Integer",
+          "value": 0
+        },
+        "asyncWait": true
+      },
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%pp%_cylVisibleBool%/pp%",
+        "value": {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:general#/definitions/Boolean",
+          "value": true
+        },
+        "asyncWait": true
+      }
+    ]
+  }
+]
+</script>
 </div>
-<div id="UserControl1_7" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="707" data-tchmi-height-unit="px" data-tchmi-left="524" data-tchmi-left-unit="px" data-tchmi-target-user-control="Components/Cylinder/Cylinder.usercontrol" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-width="796" data-tchmi-width-unit="px" data-tchmi-_selfvisiblebool="%pp%_cylVisibleBool%/pp%" data-tchmi-hmi="%f%%pp%hmi::cyls[%pp%_idx%/pp%]%/pp%%/f%">
+
+    <!--    <div id="cylFullUc" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="707" data-tchmi-height-unit="px" data-tchmi-left="524" data-tchmi-left-unit="px" data-tchmi-target-user-control="Components/Cylinder/Cylinder.usercontrol" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-width="796" data-tchmi-width-unit="px" data-tchmi-_selfvisiblebool="%pp%_cylVisibleBool%/pp%" data-tchmi-hmi="%f%%pp%hmi::cyls[%pp%_idx%/pp%]%/pp%%/f%">
+        </div>
+        -->
+    <div id="cylFullUc" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="707" data-tchmi-height-unit="px" data-tchmi-left="724" data-tchmi-left-unit="px" data-tchmi-target-user-control="Components/Cylinder/Cylinder.usercontrol" data-tchmi-top="10" data-tchmi-top-unit="px" data-tchmi-width="796" data-tchmi-width-unit="px" data-tchmi-_selfvisiblebool="%pp%_cylVisibleBool%/pp%" data-tchmi-hmi="%pp%hmi::cyls[%pp%_cylIdx%/pp%]%/pp%" data-tchmi-zindex="1" data-tchmi-visibility="%f%VisibilityFromBool(%pp%_cylVisibleBool%/pp%)%/f%">
+        %s%ADS.PLC1.HMI.curingStations[0]::cyls[0]%/s%
+
+    </div>
+
+
+    <div id="CylHorRightLink_4" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="152" data-tchmi-height-unit="px" data-tchmi-left="10" data-tchmi-left-unit="px" data-tchmi-target-user-control="Components/Cylinder/CylHorRightLink.usercontrol" data-tchmi-top="246" data-tchmi-top-unit="px" data-tchmi-width="478" data-tchmi-width-unit="px" data-tchmi-hmi="%pp%hmi::cyls[1]%/pp%">
+    
+<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
+[
+  {
+    "event": "%ctx%owner::Id|EventRegistrationMode=Resolve%/ctx%.onMouseDown",
+    "actions": [
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%pp%_cylIdx%/pp%",
+        "value": {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:general#/definitions/Integer",
+          "value": 1
+        },
+        "asyncWait": true
+      },
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%pp%_cylVisibleBool%/pp%",
+        "value": {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:general#/definitions/Boolean",
+          "value": true
+        },
+        "asyncWait": true
+      }
+    ]
+  }
+]
+</script>
 </div>
-<div id="CylHorRightLink_4" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="152" data-tchmi-height-unit="px" data-tchmi-left="28" data-tchmi-left-unit="px" data-tchmi-target-user-control="Components/Cylinder/CylHorRightLink.usercontrol" data-tchmi-top="284" data-tchmi-top-unit="px" data-tchmi-width="478" data-tchmi-width-unit="px" data-tchmi-hmi="%pp%hmi::gripper%/pp%">
+    <div id="CuringStation_5" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="74" data-tchmi-height-unit="px" data-tchmi-left="10" data-tchmi-left-unit="px" data-tchmi-target-user-control="Components/CuringStation/curingStationMinimal.usercontrol" data-tchmi-top="10" data-tchmi-top-unit="px" data-tchmi-width="506" data-tchmi-width-unit="px" data-tchmi-hmi="%pp%hmi%/pp%">
+    </div>
+    <div id="ControlSignal_1" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="137" data-tchmi-height-unit="px" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-target-user-control="Components/ControlSignals/ControlSignal.usercontrol" data-tchmi-top="564" data-tchmi-top-unit="px" data-tchmi-width="419" data-tchmi-width-unit="px" data-tchmi-hmi="%s%ADS.PLC1.HMI.cs%/s%">
+    </div>
+<div id="UserControl1_8" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="555" data-tchmi-height-unit="px" data-tchmi-left="508" data-tchmi-left-unit="px" data-tchmi-target-user-control="Components/AI/AnalogInput.usercontrol" data-tchmi-top="146" data-tchmi-top-unit="px" data-tchmi-width="493" data-tchmi-width-unit="px" data-tchmi-hmi="%pp%hmi::heater::ai%/pp%" data-tchmi-visible="%pp%_aiVisiblebool%/pp%" data-tchmi-_selfvisiblebool="%pp%_aiVisiblebool%/pp%" data-tchmi-visibility="%f%VisibilityFromBool(%pp%_aiVisiblebool%/pp%)%/f%" data-tchmi-zindex="2">
 </div>
-<div id="CuringStation_5" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="74" data-tchmi-height-unit="px" data-tchmi-left="10" data-tchmi-left-unit="px" data-tchmi-target-user-control="Components/CuringStation/curingStationMinimal.usercontrol" data-tchmi-top="10" data-tchmi-top-unit="px" data-tchmi-width="506" data-tchmi-width-unit="px" data-tchmi-hmi="%pp%hmi%/pp%">
-</div>
-<div id="ControlSignal_1" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="137" data-tchmi-height-unit="px" data-tchmi-left="28" data-tchmi-left-unit="px" data-tchmi-target-user-control="Components/ControlSignals/ControlSignal.usercontrol" data-tchmi-top="506" data-tchmi-top-unit="px" data-tchmi-width="419" data-tchmi-width-unit="px" data-tchmi-hmi="%s%ADS.PLC1.HMI.cs%/s%">
+<div id="AnalogInputLink_1" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="121" data-tchmi-height-unit="px" data-tchmi-left="10" data-tchmi-left-unit="px" data-tchmi-target-user-control="Components/AI/AnalogInputLink.usercontrol" data-tchmi-top="398" data-tchmi-top-unit="px" data-tchmi-width="478" data-tchmi-width-unit="px" data-tchmi-hmi="%pp%hmi::heater::ai%/pp%">
+
+<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
+[
+  {
+    "event": "%ctx%owner::Id|EventRegistrationMode=Resolve%/ctx%.onMouseDown",
+    "actions": [
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%pp%_aiVisiblebool%/pp%",
+        "value": {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:general#/definitions/Boolean",
+          "value": true
+        },
+        "asyncWait": true
+      }
+    ]
+  }
+]
+</script>
 </div>
 </div>

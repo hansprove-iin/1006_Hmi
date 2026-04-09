@@ -10,7 +10,7 @@
       "name": "data-tchmi-hmi",
       "displayName": "hmi",
       "visible": true,
-      "type": "tchmi:server#/definitions/ADS-PLC1.IIN_Base.ST_CYL_HMI",
+      "type": "tchmi:server#/definitions/ADS-PLC1.IIN_Base.ST_AI_HMI",
       "category": "",
       "description": "",
       "readOnly": false,
@@ -19,6 +19,6 @@
     }
   ],
   "virtualRights": [],
-  "$schema": "./../../../Packages/Beckhoff.TwinCAT.HMI.Framework.14.3.431/runtimes/native1.12-tchmi/Schema/UserControlConfig.Schema.json",
+  "$schema": "./../../../../1006_CompleteSolution/Packages/Beckhoff.TwinCAT.HMI.Framework.14.3.350/runtimes/native1.12-tchmi/Schema/UserControlConfig.Schema.json",
   "description": ""
 }

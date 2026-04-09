@@ -1,8 +1,8 @@
 <div id="CuringStations_1" data-tchmi-type="TcHmi.Controls.System.TcHmiContent" data-tchmi-top="0" data-tchmi-left="0" data-tchmi-width="1624" data-tchmi-height="771">
 
-<div id="TcHmiImage_57" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiImage" data-tchmi-height="287" data-tchmi-height-unit="px" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-src="Images/MenuImages/Cure Station.png" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-width="297" data-tchmi-width-unit="px">
+<div id="TcHmiImage_57" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiImage" data-tchmi-height="287" data-tchmi-height-unit="px" data-tchmi-left="1301" data-tchmi-left-unit="px" data-tchmi-src="Images/MenuImages/Cure Station.png" data-tchmi-top="76" data-tchmi-top-unit="px" data-tchmi-width="297" data-tchmi-width-unit="px">
 </div>
-<div id="decCuringStationIdxBtn" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiButton" data-tchmi-height="50" data-tchmi-height-unit="px" data-tchmi-left="307" data-tchmi-left-unit="px" data-tchmi-text="&lt;" data-tchmi-top="10" data-tchmi-top-unit="px" data-tchmi-width="100" data-tchmi-width-unit="px" data-tchmi-word-wrap="True" data-tchmi-text-font-size="25">
+<div id="decCuringStationIdxBtn" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiButton" data-tchmi-height="50" data-tchmi-height-unit="px" data-tchmi-left="11" data-tchmi-left-unit="px" data-tchmi-text="&lt;" data-tchmi-top="6" data-tchmi-top-unit="px" data-tchmi-width="100" data-tchmi-width-unit="px" data-tchmi-word-wrap="True" data-tchmi-text-font-size="25">
     <script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
 [
   {
@@ -41,7 +41,7 @@
 ]
 </script>
 </div>
-<div id="incCuringStationIdxBtn" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiButton" data-tchmi-height="50" data-tchmi-height-unit="px" data-tchmi-left="440" data-tchmi-left-unit="px" data-tchmi-text="&gt;" data-tchmi-top="10" data-tchmi-top-unit="px" data-tchmi-width="100" data-tchmi-width-unit="px" data-tchmi-word-wrap="True" data-tchmi-text-font-size="25">
+<div id="incCuringStationIdxBtn" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiButton" data-tchmi-height="50" data-tchmi-height-unit="px" data-tchmi-left="144" data-tchmi-left-unit="px" data-tchmi-text="&gt;" data-tchmi-top="6" data-tchmi-top-unit="px" data-tchmi-width="100" data-tchmi-width-unit="px" data-tchmi-word-wrap="True" data-tchmi-text-font-size="25">
     <script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
 [
   {
@@ -80,10 +80,10 @@
 ]
 </script>
 </div>
-    <div id="CuringStation_6" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="711" data-tchmi-height-unit="px" data-tchmi-left="297" data-tchmi-left-unit="px" data-tchmi-target-user-control="Components/CuringStation/curingStationService.usercontrol" data-tchmi-top="60" data-tchmi-top-unit="px" data-tchmi-width="1657" data-tchmi-width-unit="px" data-tchmi-hmi="%s%ADS.PLC1.HMI.curingStations[%i%curingStationSelection%/i%]%/s%">
+    <div id="CuringStation_6" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="711" data-tchmi-height-unit="px" data-tchmi-left="1" data-tchmi-left-unit="px" data-tchmi-target-user-control="Components/CuringStation/curingStationService.usercontrol" data-tchmi-top="56" data-tchmi-top-unit="px" data-tchmi-width="1657" data-tchmi-width-unit="px" data-tchmi-hmi="%s%ADS.PLC1.HMI.curingStations[%i%curingStationSelection%/i%]%/s%">
      
     </div>
-<div id="TcHmiButton_138" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiButton" data-tchmi-height="50" data-tchmi-height-unit="px" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-text="Button" data-tchmi-top="625" data-tchmi-top-unit="px" data-tchmi-width="100" data-tchmi-width-unit="px" data-tchmi-word-wrap="True">
+<div id="TcHmiButton_138" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiButton" data-tchmi-height="50" data-tchmi-height-unit="px" data-tchmi-left="1308" data-tchmi-left-unit="px" data-tchmi-text="Button" data-tchmi-top="622" data-tchmi-top-unit="px" data-tchmi-width="100" data-tchmi-width-unit="px" data-tchmi-word-wrap="True">
 <script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
 [
   {

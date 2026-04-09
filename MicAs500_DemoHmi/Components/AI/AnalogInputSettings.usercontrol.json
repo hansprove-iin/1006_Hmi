@@ -1,0 +1,41 @@
+{
+  "parameters": [
+    {
+      "allowSymbolExpressionsInObject": false,
+      "requiredOnCompile": false,
+      "bindable": true,
+      "propertySetterName": "setSettings",
+      "propertyGetterName": "getSettings",
+      "refTo": "",
+      "name": "data-tchmi-settings",
+      "displayName": "settings",
+      "visible": true,
+      "type": "tchmi:server#/definitions/ADS-PLC1.IIN_Base.ST_AI_SETTINGS",
+      "category": "",
+      "description": "",
+      "readOnly": false,
+      "heritable": true,
+      "propertyName": "settings"
+    },
+    {
+      "allowSymbolExpressionsInObject": false,
+      "requiredOnCompile": false,
+      "bindable": true,
+      "propertySetterName": "setVisible",
+      "propertyGetterName": "getVisible",
+      "refTo": "",
+      "name": "data-tchmi-visible",
+      "displayName": "visible",
+      "visible": true,
+      "type": "tchmi:general#/definitions/Boolean",
+      "category": "",
+      "description": "",
+      "readOnly": false,
+      "heritable": true,
+      "propertyName": "visible"
+    }
+  ],
+  "virtualRights": [],
+  "$schema": "./../../Packages/Beckhoff.TwinCAT.HMI.Framework.14.3.431/runtimes/native1.12-tchmi/Schema/UserControlConfig.Schema.json",
+  "description": ""
+}

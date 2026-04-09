@@ -1,9 +1,13 @@
-<div id="CuringStations" data-tchmi-type="TcHmi.Controls.System.TcHmiContent" data-tchmi-top="0" data-tchmi-left="0" data-tchmi-width="1361" data-tchmi-height="535">
+<div id="CuringStations" data-tchmi-type="TcHmi.Controls.System.TcHmiContent" data-tchmi-top="0" data-tchmi-left="0" data-tchmi-width="1361" data-tchmi-height="688">
 
 <div id="TcHmiImage_56" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiImage" data-tchmi-height="287" data-tchmi-height-unit="px" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-src="Images/MenuImages/Cure Station.png" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-width="297" data-tchmi-width-unit="px">
 </div>
 <div id="CuringStation_3" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="74" data-tchmi-height-unit="px" data-tchmi-left="317" data-tchmi-left-unit="px" data-tchmi-target-user-control="Components/CuringStation/curingStationMinimal.usercontrol" data-tchmi-top="16" data-tchmi-top-unit="px" data-tchmi-width="525" data-tchmi-width-unit="px" data-tchmi-hmi="%s%ADS.PLC1.HMI.curingStations[0]%/s%">
 </div>
 <div id="CuringStation_4" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="74" data-tchmi-height-unit="px" data-tchmi-left="317" data-tchmi-left-unit="px" data-tchmi-target-user-control="Components/CuringStation/curingStationMinimal.usercontrol" data-tchmi-top="90" data-tchmi-top-unit="px" data-tchmi-width="525" data-tchmi-width-unit="px" data-tchmi-hmi="%s%ADS.PLC1.HMI.curingStations[1]%/s%">
+</div>
+<div id="CuringStation_7" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="74" data-tchmi-height-unit="px" data-tchmi-left="317" data-tchmi-left-unit="px" data-tchmi-target-user-control="Components/CuringStation/curingStationMinimal.usercontrol" data-tchmi-top="174" data-tchmi-top-unit="px" data-tchmi-width="525" data-tchmi-width-unit="px" data-tchmi-hmi="%s%ADS.PLC1.HMI.curingStations[2]%/s%">
+</div>
+<div id="CuringStation_8" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="74" data-tchmi-height-unit="px" data-tchmi-left="317" data-tchmi-left-unit="px" data-tchmi-target-user-control="Components/CuringStation/curingStationMinimal.usercontrol" data-tchmi-top="253" data-tchmi-top-unit="px" data-tchmi-width="525" data-tchmi-width-unit="px" data-tchmi-hmi="%s%ADS.PLC1.HMI.curingStations[3]%/s%">
 </div>
 </div>

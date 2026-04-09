@@ -149,6 +149,15 @@
   ],
   "userControls": [
     {
+      "url": "Components/AI/AnalogInput.usercontrol"
+    },
+    {
+      "url": "Components/AI/AnalogInputLink.usercontrol"
+    },
+    {
+      "url": "Components/AI/AnalogInputSettings.usercontrol"
+    },
+    {
       "url": "Components/ControlSignals/ControlSignal.usercontrol"
     },
     {
@@ -174,6 +183,15 @@
     },
     {
       "url": "Components/Cylinder/MyToggleButton.usercontrol"
+    },
+    {
+      "url": "Components/DI/DigitalInput.usercontrol"
+    },
+    {
+      "url": "Components/DI/DigitalInputSettings.usercontrol"
+    },
+    {
+      "url": "Components/DI/LED.usercontrol"
     }
   ],
   "controls": [],

@@ -1,0 +1,60 @@
+{
+  "parameters": [
+    {
+      "allowSymbolExpressionsInObject": false,
+      "requiredOnCompile": false,
+      "bindable": true,
+      "propertySetterName": "setHmi",
+      "propertyGetterName": "getHmi",
+      "refTo": "",
+      "name": "data-tchmi-hmi",
+      "displayName": "hmi",
+      "visible": true,
+      "type": "tchmi:server#/definitions/ADS-PLC1.IIN_Base.ST_AI_HMI",
+      "category": "",
+      "description": "",
+      "readOnly": false,
+      "heritable": true,
+      "propertyName": "hmi"
+    },
+    {
+      "allowSymbolExpressionsInObject": false,
+      "requiredOnCompile": false,
+      "bindable": true,
+      "propertySetterName": "set_selfVisiblebool",
+      "propertyGetterName": "get_selfVisiblebool",
+      "refTo": "",
+      "name": "data-tchmi-_selfvisiblebool",
+      "displayName": "_selfVisiblebool",
+      "visible": true,
+      "type": "tchmi:general#/definitions/Boolean",
+      "category": "",
+      "description": "",
+      "readOnly": false,
+      "heritable": true,
+      "propertyName": "_selfVisiblebool"
+    },
+    {
+      "allowSymbolExpressionsInObject": false,
+      "defaultValue": true,
+      "defaultValueInternal": false,
+      "requiredOnCompile": false,
+      "bindable": true,
+      "propertySetterName": "set_settingsVisible",
+      "propertyGetterName": "get_settingsVisible",
+      "refTo": "",
+      "name": "data-tchmi-_settingsvisible",
+      "displayName": "_settingsVisible",
+      "visible": true,
+      "type": "tchmi:general#/definitions/Boolean",
+      "category": "",
+      "description": "",
+      "readOnly": false,
+      "heritable": true,
+      "propertyName": "_settingsVisible"
+    }
+  ],
+  "virtualRights": [],
+  "$schema": "./../../Packages/Beckhoff.TwinCAT.HMI.Framework.14.3.431/runtimes/native1.12-tchmi/Schema/UserControlConfig.Schema.json",
+  "description": ""
+}
