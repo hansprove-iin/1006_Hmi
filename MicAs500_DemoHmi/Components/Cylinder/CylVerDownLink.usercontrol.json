@@ -1,0 +1,24 @@
+{
+  "parameters": [
+    {
+      "allowSymbolExpressionsInObject": false,
+      "requiredOnCompile": false,
+      "bindable": true,
+      "propertySetterName": "setHmi",
+      "propertyGetterName": "getHmi",
+      "refTo": "",
+      "name": "data-tchmi-hmi",
+      "displayName": "hmi",
+      "visible": true,
+      "type": "tchmi:server#/definitions/ADS-PLC1.TM_Devices.TC_HMI_CYL-ShowRecursively",
+      "category": "",
+      "description": "",
+      "readOnly": false,
+      "heritable": true,
+      "propertyName": "hmi"
+    }
+  ],
+  "virtualRights": [],
+  "$schema": "./../../../Packages/Beckhoff.TwinCAT.HMI.Framework.14.3.431/runtimes/native1.12-tchmi/Schema/UserControlConfig.Schema.json",
+  "description": ""
+}

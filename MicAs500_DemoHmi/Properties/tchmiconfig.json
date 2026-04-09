@@ -90,11 +90,71 @@
       "name": "Fonts/Fonts.css",
       "description": "",
       "type": "Stylesheet"
+    },
+    {
+      "name": "Components/scripts/fileSelected.js",
+      "description": "",
+      "type": "JavaScript"
+    },
+    {
+      "name": "Components/scripts/LED_color.js",
+      "description": "",
+      "type": "JavaScript"
+    },
+    {
+      "name": "Components/scripts/LED_color2.js",
+      "description": "",
+      "type": "JavaScript"
+    },
+    {
+      "name": "Components/scripts/ReturnCylinderFromArray.js",
+      "description": "",
+      "type": "JavaScript"
+    },
+    {
+      "name": "Components/scripts/TestParams.js",
+      "description": "",
+      "type": "JavaScript"
+    },
+    {
+      "name": "Components/scripts/ToggleLocalVar.js",
+      "description": "",
+      "type": "JavaScript"
+    },
+    {
+      "name": "Components/scripts/ToggleParam.js",
+      "description": "",
+      "type": "JavaScript"
+    },
+    {
+      "name": "Components/scripts/ToggleVisibility.js",
+      "description": "",
+      "type": "JavaScript"
+    },
+    {
+      "name": "Components/scripts/VisibilityFromBool.js",
+      "description": "",
+      "type": "JavaScript"
     }
   ],
   "userControls": [
     {
-      "url": "Components/curingStation.usercontrol"
+      "url": "Components/CuringStation/curingStation.usercontrol"
+    },
+    {
+      "url": "Components/Cylinder/CylHorRightLink.usercontrol"
+    },
+    {
+      "url": "Components/Cylinder/Cylinder.usercontrol"
+    },
+    {
+      "url": "Components/Cylinder/CylVerDownLink.usercontrol"
+    },
+    {
+      "url": "Components/Cylinder/LedWithForce.usercontrol"
+    },
+    {
+      "url": "Components/Cylinder/MyToggleButton.usercontrol"
     }
   ],
   "controls": [],
@@ -199,7 +259,35 @@
       "preloadBindings": false
     }
   ],
-  "userFunctions": [],
+  "userFunctions": [
+    {
+      "url": "Components/scripts/fileSelected.js"
+    },
+    {
+      "url": "Components/scripts/LED_color.js"
+    },
+    {
+      "url": "Components/scripts/LED_color2.js"
+    },
+    {
+      "url": "Components/scripts/ReturnCylinderFromArray.js"
+    },
+    {
+      "url": "Components/scripts/TestParams.js"
+    },
+    {
+      "url": "Components/scripts/ToggleLocalVar.js"
+    },
+    {
+      "url": "Components/scripts/ToggleParam.js"
+    },
+    {
+      "url": "Components/scripts/ToggleVisibility.js"
+    },
+    {
+      "url": "Components/scripts/VisibilityFromBool.js"
+    }
+  ],
   "symbols": {
     "internal": {
       "AL": {

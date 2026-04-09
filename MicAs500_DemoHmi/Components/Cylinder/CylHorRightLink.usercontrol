@@ -1,0 +1,17 @@
+<div id="CylHorRightLink" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControl" data-tchmi-top="0" data-tchmi-left="0" data-tchmi-width="478" data-tchmi-height="170" data-tchmi-width-unit="px" data-tchmi-height-unit="px" data-tchmi-creator-viewport-width="500" data-tchmi-creator-viewport-height="500" data-tchmi-zindex="1">
+
+<div id="TcHmiTextblock_27" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextblock" data-tchmi-height="48" data-tchmi-height-unit="px" data-tchmi-left="65" data-tchmi-left-unit="px" data-tchmi-text="%pp%hmi::settings::name%/pp%" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-width="282" data-tchmi-width-unit="px" data-tchmi-word-wrap="True" data-tchmi-text-font-size="18" data-tchmi-zindex="1">
+</div>
+
+
+<div id="TcHmiImage_4" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiImage" data-tchmi-height="53" data-tchmi-height-unit="px" data-tchmi-left="169" data-tchmi-left-unit="px" data-tchmi-top="61" data-tchmi-top-unit="px" data-tchmi-width="36" data-tchmi-width-unit="px" data-tchmi-src="Imports/Images/lightning-svgrepo-com.svg" data-tchmi-visibility="%f%VisibilityFromBool(%pp%hmi::state::forced%/pp%)%/f%" data-tchmi-zindex="1">
+</div>
+<div id="TcHmiImage_6" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiImage" data-tchmi-height="53" data-tchmi-height-unit="px" data-tchmi-left="382" data-tchmi-left-unit="px" data-tchmi-top="26" data-tchmi-top-unit="px" data-tchmi-width="36" data-tchmi-width-unit="px" data-tchmi-src="Imports/Images/lightning-svgrepo-com.svg" data-tchmi-visibility="%f%VisibilityFromBool(%pp%hmi::state::closedPosForced%/pp%)%/f%" data-tchmi-zindex="1">
+</div>
+<div id="TcHmiImage_7" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiImage" data-tchmi-height="53" data-tchmi-height-unit="px" data-tchmi-left="440" data-tchmi-left-unit="px" data-tchmi-top="26" data-tchmi-top-unit="px" data-tchmi-width="36" data-tchmi-width-unit="px" data-tchmi-src="Imports/Images/lightning-svgrepo-com.svg" data-tchmi-visibility="%f%VisibilityFromBool(%pp%hmi::state::openPosForced%/pp%)%/f%" data-tchmi-zindex="1">
+</div>
+<div id="TcHmiImage_11" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiImage" data-tchmi-height="176" data-tchmi-height-unit="px" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-src="Imports/Images/pneumatic-cylinder-open.svg" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-width="485" data-tchmi-width-unit="px" data-tchmi-background-image-vertical-alignment="Bottom" data-tchmi-zindex="0" data-tchmi-visibility="%f%VisibilityFromBool(%pp%hmi::state::inOpenPos%/pp%)%/f%">
+</div>
+<div id="TcHmiImage_12" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiImage" data-tchmi-height="176" data-tchmi-height-unit="px" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-src="Imports/Images/pneumatic-cylinder-closed.svg" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-width="485" data-tchmi-width-unit="px" data-tchmi-background-image-vertical-alignment="Bottom" data-tchmi-zindex="0" data-tchmi-visibility="%f%VisibilityFromBool(%pp%hmi::state::inClosedPos%/pp%)%/f%">
+</div>
+</div>

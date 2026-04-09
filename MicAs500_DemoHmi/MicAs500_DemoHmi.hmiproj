@@ -135,12 +135,110 @@
   <Target Name="Clean" DependsOnTargets="$(CleanDependsOn)" />
   <Target Name="ReBuild" DependsOnTargets="Clean; Build" />
   <ItemGroup>
-    <Content Include="Components\curingStation.usercontrol">
+    <Content Include="Components\CuringStation\curingStation.usercontrol">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="Components\curingStation.usercontrol.json">
+    <Content Include="Components\CuringStation\curingStation.usercontrol.json">
       <SubType>Content</SubType>
-      <DependentUpon>Components\curingStation.usercontrol</DependentUpon>
+      <DependentUpon>Components\CuringStation\curingStation.usercontrol</DependentUpon>
+    </Content>
+    <Content Include="Components\Cylinder\CylHorRightLink.usercontrol">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Components\Cylinder\CylHorRightLink.usercontrol.json">
+      <SubType>Content</SubType>
+      <DependentUpon>Components\Cylinder\CylHorRightLink.usercontrol</DependentUpon>
+    </Content>
+    <Content Include="Components\Cylinder\Cylinder.usercontrol">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Components\Cylinder\Cylinder.usercontrol.json">
+      <SubType>Content</SubType>
+      <DependentUpon>Components\Cylinder\Cylinder.usercontrol</DependentUpon>
+    </Content>
+    <Content Include="Components\Cylinder\CylVerDownLink.usercontrol">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Components\Cylinder\CylVerDownLink.usercontrol.json">
+      <SubType>Content</SubType>
+      <DependentUpon>Components\Cylinder\CylVerDownLink.usercontrol</DependentUpon>
+    </Content>
+    <Content Include="Components\Cylinder\LedWithForce.usercontrol">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Components\Cylinder\LedWithForce.usercontrol.json">
+      <SubType>Content</SubType>
+      <DependentUpon>Components\Cylinder\LedWithForce.usercontrol</DependentUpon>
+    </Content>
+    <Content Include="Components\Cylinder\MyToggleButton.usercontrol">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Components\Cylinder\MyToggleButton.usercontrol.json">
+      <SubType>Content</SubType>
+      <DependentUpon>Components\Cylinder\MyToggleButton.usercontrol</DependentUpon>
+    </Content>
+    <Content Include="Components\scripts\fileSelected.function.json">
+      <SubType>Content</SubType>
+      <DependentUpon>Components\scripts\fileSelected.js</DependentUpon>
+    </Content>
+    <Content Include="Components\scripts\fileSelected.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Components\scripts\LED_color.function.json">
+      <SubType>Content</SubType>
+      <DependentUpon>Components\scripts\LED_color.js</DependentUpon>
+    </Content>
+    <Content Include="Components\scripts\LED_color.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Components\scripts\LED_color2.function.json">
+      <SubType>Content</SubType>
+      <DependentUpon>Components\scripts\LED_color2.js</DependentUpon>
+    </Content>
+    <Content Include="Components\scripts\LED_color2.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Components\scripts\ReturnCylinderFromArray.function.json">
+      <SubType>Content</SubType>
+      <DependentUpon>Components\scripts\ReturnCylinderFromArray.js</DependentUpon>
+    </Content>
+    <Content Include="Components\scripts\ReturnCylinderFromArray.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Components\scripts\TestParams.function.json">
+      <SubType>Content</SubType>
+      <DependentUpon>Components\scripts\TestParams.js</DependentUpon>
+    </Content>
+    <Content Include="Components\scripts\TestParams.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Components\scripts\ToggleLocalVar.function.json">
+      <SubType>Content</SubType>
+      <DependentUpon>Components\scripts\ToggleLocalVar.js</DependentUpon>
+    </Content>
+    <Content Include="Components\scripts\ToggleLocalVar.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Components\scripts\ToggleParam.function.json">
+      <SubType>Content</SubType>
+      <DependentUpon>Components\scripts\ToggleParam.js</DependentUpon>
+    </Content>
+    <Content Include="Components\scripts\ToggleParam.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Components\scripts\ToggleVisibility.function.json">
+      <SubType>Content</SubType>
+      <DependentUpon>Components\scripts\ToggleVisibility.js</DependentUpon>
+    </Content>
+    <Content Include="Components\scripts\ToggleVisibility.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Components\scripts\VisibilityFromBool.function.json">
+      <SubType>Content</SubType>
+      <DependentUpon>Components\scripts\VisibilityFromBool.js</DependentUpon>
+    </Content>
+    <Content Include="Components\scripts\VisibilityFromBool.js">
+      <SubType>Content</SubType>
     </Content>
     <Content Include="Images\1160356.png">
       <SubType>Content</SubType>
@@ -181,6 +279,9 @@
     <Content Include="Images\MainBg\vas_ylapalkki_harmaa.png">
       <SubType>Content</SubType>
     </Content>
+    <Folder Include="Components\Cylinder" />
+    <Folder Include="Components\CuringStation" />
+    <Folder Include="Components\scripts" />
     <Folder Include="Fonts\" />
     <Folder Include="Images" />
     <Folder Include="Images\Manifest" />
@@ -489,6 +590,36 @@
       <SubType>Content</SubType>
     </Content>
     <Content Include="Images\S_2.png">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Imports\Images\lightning-svgrepo-com.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Imports\Images\move cylinder up-active.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Imports\Images\move cylinder up-normal.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Imports\Images\move cylinder up-pressed.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Imports\Images\pneumatic-cylinder-closed.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Imports\Images\pneumatic-cylinder-open.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Imports\Images\toolbox_active.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Imports\Images\toolbox_pressed.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Imports\Images\wrench-svgrepo-com.svg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Imports\Images\wrench-svgrepo-com_no_color.svg">
       <SubType>Content</SubType>
     </Content>
     <Content Include="LoginPage1.html">

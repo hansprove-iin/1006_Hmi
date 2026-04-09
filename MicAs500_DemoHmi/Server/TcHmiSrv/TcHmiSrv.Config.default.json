@@ -29,12 +29,44 @@
     "DEFAULTTIMEZONE": "client",
     "DEFINITIONS": {
         "ADS": {
+            "ADS-PLC1.ARRAY_0..0_OF-ST_CURING_STATION_HMI": {
+                "items": {
+                    "$ref": "tchmi:server#/definitions/ADS-PLC1.ST_CURING_STATION_HMI"
+                },
+                "maxItems": 1,
+                "minItems": 1,
+                "type": "array"
+            },
+            "ADS-PLC1.ARRAY_0..1_OF-IIN_Base.ST_DI_HMI": {
+                "items": {
+                    "$ref": "tchmi:server#/definitions/ADS-PLC1.IIN_Base.ST_DI_HMI"
+                },
+                "maxItems": 2,
+                "minItems": 2,
+                "type": "array"
+            },
             "ADS-PLC1.ARRAY_0..3_OF-REAL": {
                 "items": {
                     "$ref": "tchmi:general#/definitions/REAL"
                 },
                 "maxItems": 4,
                 "minItems": 4,
+                "type": "array"
+            },
+            "ADS-PLC1.ARRAY_0..4_OF-ST_CURING_STATION_HMI": {
+                "items": {
+                    "$ref": "tchmi:server#/definitions/ADS-PLC1.ST_CURING_STATION_HMI"
+                },
+                "maxItems": 5,
+                "minItems": 5,
+                "type": "array"
+            },
+            "ADS-PLC1.ARRAY_0..9_OF-IIN_Base.ST_STATISTIC_ROW": {
+                "items": {
+                    "$ref": "tchmi:server#/definitions/ADS-PLC1.IIN_Base.ST_STATISTIC_ROW"
+                },
+                "maxItems": 10,
+                "minItems": 10,
                 "type": "array"
             },
             "ADS-PLC1.ARRAY_1..6_OF-REAL": {
@@ -45,6 +77,52 @@
                 "minItems": 6,
                 "startOffset": 1,
                 "type": "array"
+            },
+            "ADS-PLC1.E_CURING_STATION_OPERATION_STATE": {
+                "attributes": {
+                    "generate_implicit_init_function": "",
+                    "qualified_only": "",
+                    "strict": "",
+                    "to_string": ""
+                },
+                "enum": [
+                    0,
+                    1
+                ],
+                "options": [
+                    {
+                        "label": "INACTIVE",
+                        "value": 0
+                    },
+                    {
+                        "label": "ENABLED",
+                        "value": 1
+                    }
+                ],
+                "type": "integer"
+            },
+            "ADS-PLC1.E_HEATER_OPERATION_STATE": {
+                "attributes": {
+                    "generate_implicit_init_function": "",
+                    "qualified_only": "",
+                    "strict": "",
+                    "to_string": ""
+                },
+                "enum": [
+                    0,
+                    1
+                ],
+                "options": [
+                    {
+                        "label": "INACTIVE",
+                        "value": 0
+                    },
+                    {
+                        "label": "ENABLED",
+                        "value": 1
+                    }
+                ],
+                "type": "integer"
             },
             "ADS-PLC1.E_MecaStatus": {
                 "attributes": {
@@ -247,6 +325,1813 @@
                 ],
                 "type": "integer"
             },
+            "ADS-PLC1.IIN_Base.E_ALARM_TYPE": {
+                "attributes": {
+                    "qualified_only": "",
+                    "to_string": ""
+                },
+                "enum": [
+                    0,
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6,
+                    7,
+                    8,
+                    9,
+                    10,
+                    11,
+                    12,
+                    13,
+                    14,
+                    15,
+                    16,
+                    17,
+                    18,
+                    19,
+                    20,
+                    21,
+                    22,
+                    23,
+                    24,
+                    25,
+                    26,
+                    27,
+                    28,
+                    29,
+                    30,
+                    31,
+                    32,
+                    33,
+                    34,
+                    35,
+                    36,
+                    37,
+                    38,
+                    39,
+                    40,
+                    41,
+                    42,
+                    43,
+                    44,
+                    45,
+                    46,
+                    47,
+                    48,
+                    49,
+                    50,
+                    51,
+                    52,
+                    53,
+                    54,
+                    55,
+                    56,
+                    57,
+                    58,
+                    59,
+                    60,
+                    61
+                ],
+                "options": [
+                    {
+                        "label": "UNDEFINED",
+                        "value": 0
+                    },
+                    {
+                        "label": "TIME_OUT",
+                        "value": 1
+                    },
+                    {
+                        "label": "SENSOR_BLOCKED",
+                        "value": 2
+                    },
+                    {
+                        "label": "BAD_REQUEST",
+                        "value": 3
+                    },
+                    {
+                        "label": "OVERLOAD",
+                        "value": 4
+                    },
+                    {
+                        "label": "OVERHEAT",
+                        "value": 5
+                    },
+                    {
+                        "label": "COLLISION",
+                        "value": 6
+                    },
+                    {
+                        "label": "SERVO_ERROR",
+                        "value": 7
+                    },
+                    {
+                        "label": "POSITIONING_ERROR",
+                        "value": 8
+                    },
+                    {
+                        "label": "VELOCITY_ERROR",
+                        "value": 9
+                    },
+                    {
+                        "label": "MOVE_RELATIVE_ERROR",
+                        "value": 10
+                    },
+                    {
+                        "label": "JOGGING_ERROR",
+                        "value": 11
+                    },
+                    {
+                        "label": "PROBING_ERROR",
+                        "value": 12
+                    },
+                    {
+                        "label": "GEARING_ERROR",
+                        "value": 13
+                    },
+                    {
+                        "label": "GEAR_IN_ERROR",
+                        "value": 14
+                    },
+                    {
+                        "label": "GEAR_OUT_ERROR",
+                        "value": 15
+                    },
+                    {
+                        "label": "DIMENSION_MISMATCH",
+                        "value": 16
+                    },
+                    {
+                        "label": "WRONG_COORDINATES",
+                        "value": 17
+                    },
+                    {
+                        "label": "ITEM_MISMATCH",
+                        "value": 18
+                    },
+                    {
+                        "label": "ESTOP",
+                        "value": 19
+                    },
+                    {
+                        "label": "BELOW_MIN",
+                        "value": 20
+                    },
+                    {
+                        "label": "ABOVE_MAX",
+                        "value": 21
+                    },
+                    {
+                        "label": "COMM_ERROR",
+                        "value": 22
+                    },
+                    {
+                        "label": "MISSING_PART",
+                        "value": 23
+                    },
+                    {
+                        "label": "HOMING_ERROR",
+                        "value": 24
+                    },
+                    {
+                        "label": "ZEROING_ERROR",
+                        "value": 25
+                    },
+                    {
+                        "label": "TOOL_DROP",
+                        "value": 26
+                    },
+                    {
+                        "label": "SAFETY",
+                        "value": 27
+                    },
+                    {
+                        "label": "DOCKING_STATION_ERROR",
+                        "value": 28
+                    },
+                    {
+                        "label": "PARSE_ERROR",
+                        "value": 29
+                    },
+                    {
+                        "label": "TOOL_CHANGER_ERROR",
+                        "value": 30
+                    },
+                    {
+                        "label": "WRONG_STATE",
+                        "value": 31
+                    },
+                    {
+                        "label": "HOMING_NOT_ENABLED",
+                        "value": 32
+                    },
+                    {
+                        "label": "CONFIGURATION_ERROR",
+                        "value": 33
+                    },
+                    {
+                        "label": "FORCING",
+                        "value": 34
+                    },
+                    {
+                        "label": "NO_POWER",
+                        "value": 35
+                    },
+                    {
+                        "label": "INTERRUPTION",
+                        "value": 36
+                    },
+                    {
+                        "label": "TASK_DIED",
+                        "value": 37
+                    },
+                    {
+                        "label": "SIMULATION_ACTIVE",
+                        "value": 38
+                    },
+                    {
+                        "label": "STICKY_BUTTON",
+                        "value": 39
+                    },
+                    {
+                        "label": "SAFE_TORQUE_OFF",
+                        "value": 40
+                    },
+                    {
+                        "label": "FREQ_DRIVE_ERROR",
+                        "value": 41
+                    },
+                    {
+                        "label": "START_CONDITIONS_NOT_MET",
+                        "value": 42
+                    },
+                    {
+                        "label": "MISC",
+                        "value": 43
+                    },
+                    {
+                        "label": "OUT_OF_RANGE",
+                        "value": 44
+                    },
+                    {
+                        "label": "CLOGGED",
+                        "value": 45
+                    },
+                    {
+                        "label": "MISSING",
+                        "value": 46
+                    },
+                    {
+                        "label": "OPEN",
+                        "value": 47
+                    },
+                    {
+                        "label": "PREMATURE_DETECTION",
+                        "value": 48
+                    },
+                    {
+                        "label": "TRIGGERED",
+                        "value": 49
+                    },
+                    {
+                        "label": "LOW_VALUE",
+                        "value": 50
+                    },
+                    {
+                        "label": "DEVIATION_DETECTED",
+                        "value": 51
+                    },
+                    {
+                        "label": "OVERSHOOTING",
+                        "value": 52
+                    },
+                    {
+                        "label": "SENSOR_BROKEN",
+                        "value": 53
+                    },
+                    {
+                        "label": "ROBOT_APP_ERROR",
+                        "value": 54
+                    },
+                    {
+                        "label": "VACUUM_MISSING",
+                        "value": 55
+                    },
+                    {
+                        "label": "MANUAL_MODE",
+                        "value": 56
+                    },
+                    {
+                        "label": "EDM",
+                        "value": 57
+                    },
+                    {
+                        "label": "CLOSED",
+                        "value": 58
+                    },
+                    {
+                        "label": "WAITING_CONFIRMATION",
+                        "value": 59
+                    },
+                    {
+                        "label": "SUPER_POWERS",
+                        "value": 60
+                    },
+                    {
+                        "label": "END",
+                        "value": 61
+                    }
+                ],
+                "type": "integer"
+            },
+            "ADS-PLC1.IIN_Base.E_POS": {
+                "attributes": {
+                    "qualified_only": "",
+                    "to_string": ""
+                },
+                "enum": [
+                    0,
+                    1,
+                    10,
+                    11
+                ],
+                "options": [
+                    {
+                        "label": "UNDEFINED",
+                        "value": 0
+                    },
+                    {
+                        "label": "ACCEPT_ANY",
+                        "value": 1
+                    },
+                    {
+                        "label": "MAIN",
+                        "value": 10
+                    },
+                    {
+                        "label": "MUST_BE_LAST",
+                        "value": 11
+                    }
+                ],
+                "type": "integer"
+            },
+            "ADS-PLC1.IIN_Base.ST_AI_HMI": {
+                "additionalProperties": false,
+                "properties": {
+                    "service": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:server#/definitions/ADS-PLC1.IIN_Base.ST_AI_SERVICE"
+                            },
+                            {
+                                "propertyOrder": 2
+                            }
+                        ]
+                    },
+                    "settings": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:server#/definitions/ADS-PLC1.IIN_Base.ST_AI_SETTINGS"
+                            },
+                            {
+                                "propertyOrder": 3
+                            }
+                        ]
+                    },
+                    "state": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:server#/definitions/ADS-PLC1.IIN_Base.ST_AI_STATE"
+                            },
+                            {
+                                "propertyOrder": 1
+                            }
+                        ]
+                    }
+                },
+                "required": [
+                    "state",
+                    "service",
+                    "settings"
+                ],
+                "type": "object"
+            },
+            "ADS-PLC1.IIN_Base.ST_AI_SERVICE": {
+                "additionalProperties": false,
+                "properties": {
+                    "iForce": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "propertyOrder": 4
+                            }
+                        ]
+                    },
+                    "iForceValue": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/REAL"
+                            },
+                            {
+                                "propertyOrder": 3
+                            }
+                        ]
+                    },
+                    "iTeachMax": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "comment": "Will take the current value as the 'min' value",
+                                "propertyOrder": 2
+                            }
+                        ]
+                    },
+                    "iTeachMin": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "comment": "Will take the current value as the 'max' value",
+                                "propertyOrder": 1
+                            }
+                        ]
+                    }
+                },
+                "required": [
+                    "iTeachMin",
+                    "iTeachMax",
+                    "iForceValue",
+                    "iForce"
+                ],
+                "type": "object"
+            },
+            "ADS-PLC1.IIN_Base.ST_AI_SETTINGS": {
+                "additionalProperties": false,
+                "attributes": {
+                    "$extends": [
+                        "tchmi:server#/definitions/ADS-PLC1.IIN_Base.ST_BASE_SETTINGS"
+                    ],
+                    "TcExtends": "IIN_Base.ST_BASE_SETTINGS"
+                },
+                "properties": {
+                    "ackRequired": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "comment": "When TRUE, alarm needs to be ACKed",
+                                "propertyOrder": 12
+                            }
+                        ]
+                    },
+                    "doHide": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "propertyOrder": 2
+                            }
+                        ]
+                    },
+                    "lowerAlarm": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/REAL"
+                            },
+                            {
+                                "comment": "Engineering lower alarm value, eg. 1",
+                                "propertyOrder": 9
+                            }
+                        ]
+                    },
+                    "lowerWarning": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/REAL"
+                            },
+                            {
+                                "comment": "Engineering lower warning value, eg. 5",
+                                "propertyOrder": 8
+                            }
+                        ]
+                    },
+                    "name": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:server#/definitions/ADS-PLC1.IIN_Base.T_SHORT_STR"
+                            },
+                            {
+                                "propertyOrder": 1
+                            }
+                        ]
+                    },
+                    "rawMax": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/REAL"
+                            },
+                            {
+                                "comment": "Max raw value when at the max engineering value (32767 = 100deg)",
+                                "propertyOrder": 4
+                            }
+                        ]
+                    },
+                    "rawMin": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/REAL"
+                            },
+                            {
+                                "comment": "Min raw value when at the min engineering value (0 = 0deg)",
+                                "propertyOrder": 3
+                            }
+                        ]
+                    },
+                    "scaledMax": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/REAL"
+                            },
+                            {
+                                "comment": "Engineering min value, eg. 100deg",
+                                "propertyOrder": 6
+                            }
+                        ]
+                    },
+                    "scaledMin": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/REAL"
+                            },
+                            {
+                                "comment": "Engineering min value, eg. 0deg",
+                                "propertyOrder": 5
+                            }
+                        ]
+                    },
+                    "unit": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/STRING%2880%29"
+                            },
+                            {
+                                "comment": "The engineering unit, eg. deg",
+                                "propertyOrder": 7
+                            }
+                        ]
+                    },
+                    "upperAlarm": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/REAL"
+                            },
+                            {
+                                "comment": "Engineering upper alarm value, eg. 95",
+                                "propertyOrder": 11
+                            }
+                        ]
+                    },
+                    "upperWarning": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/REAL"
+                            },
+                            {
+                                "comment": "Engineering upper warning value, eg. 85",
+                                "propertyOrder": 10
+                            }
+                        ]
+                    }
+                },
+                "required": [
+                    "name",
+                    "doHide",
+                    "rawMin",
+                    "rawMax",
+                    "scaledMin",
+                    "scaledMax",
+                    "unit",
+                    "lowerWarning",
+                    "lowerAlarm",
+                    "upperWarning",
+                    "upperAlarm",
+                    "ackRequired"
+                ],
+                "type": "object"
+            },
+            "ADS-PLC1.IIN_Base.ST_AI_STATE": {
+                "additionalProperties": false,
+                "properties": {
+                    "alarm": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "propertyOrder": 7
+                            }
+                        ]
+                    },
+                    "alarmType": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/INT"
+                            },
+                            {
+                                "propertyOrder": 8
+                            }
+                        ]
+                    },
+                    "deactive": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "comment": "TRUE when this FB is de-activated",
+                                "propertyOrder": 4
+                            }
+                        ]
+                    },
+                    "fixedSettings": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:server#/definitions/ADS-PLC1.IIN_Base.ST_FIXED_SETTINGS"
+                            },
+                            {
+                                "comment": "Fixed settings",
+                                "propertyOrder": 5
+                            }
+                        ]
+                    },
+                    "forced": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "propertyOrder": 3
+                            }
+                        ]
+                    },
+                    "rawValue": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/REAL"
+                            },
+                            {
+                                "propertyOrder": 1
+                            }
+                        ]
+                    },
+                    "scaledValue": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/REAL"
+                            },
+                            {
+                                "propertyOrder": 2
+                            }
+                        ]
+                    },
+                    "simulationActive": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "comment": "Control signals\r\n\tcontrolSignals:\t\t\tREFERENCE TO ST_CONTROL_SIGNALS_OUT;",
+                                "propertyOrder": 9
+                            }
+                        ]
+                    },
+                    "warning": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "propertyOrder": 6
+                            }
+                        ]
+                    }
+                },
+                "required": [
+                    "rawValue",
+                    "scaledValue",
+                    "forced",
+                    "deactive",
+                    "fixedSettings",
+                    "warning",
+                    "alarm",
+                    "alarmType",
+                    "simulationActive"
+                ],
+                "type": "object"
+            },
+            "ADS-PLC1.IIN_Base.ST_ALARM_FIXED_SETTINGS": {
+                "additionalProperties": false,
+                "properties": {
+                    "ackRequired": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "propertyOrder": 4
+                            }
+                        ]
+                    },
+                    "alarmType": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:server#/definitions/ADS-PLC1.IIN_Base.E_ALARM_TYPE"
+                            },
+                            {
+                                "propertyOrder": 5
+                            }
+                        ]
+                    },
+                    "doHide": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "propertyOrder": 1
+                            }
+                        ]
+                    },
+                    "isAlarm": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "propertyOrder": 2
+                            }
+                        ]
+                    },
+                    "raiseOnTrue": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "propertyOrder": 3
+                            }
+                        ]
+                    }
+                },
+                "required": [
+                    "doHide",
+                    "isAlarm",
+                    "raiseOnTrue",
+                    "ackRequired",
+                    "alarmType"
+                ],
+                "type": "object"
+            },
+            "ADS-PLC1.IIN_Base.ST_BASE_SETTINGS": {
+                "additionalProperties": false,
+                "properties": {
+                    "doHide": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "propertyOrder": 2
+                            }
+                        ]
+                    },
+                    "name": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:server#/definitions/ADS-PLC1.IIN_Base.T_SHORT_STR"
+                            },
+                            {
+                                "propertyOrder": 1
+                            }
+                        ]
+                    }
+                },
+                "required": [
+                    "name",
+                    "doHide"
+                ],
+                "type": "object"
+            },
+            "ADS-PLC1.IIN_Base.ST_CYL_HMI": {
+                "additionalProperties": false,
+                "properties": {
+                    "dis": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:server#/definitions/ADS-PLC1.ARRAY_0..1_OF-IIN_Base.ST_DI_HMI"
+                            },
+                            {
+                                "propertyOrder": 4
+                            }
+                        ]
+                    },
+                    "service": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:server#/definitions/ADS-PLC1.IIN_Base.ST_CYL_SERVICE"
+                            },
+                            {
+                                "propertyOrder": 2
+                            }
+                        ]
+                    },
+                    "settings": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:server#/definitions/ADS-PLC1.IIN_Base.ST_CYL_SETTINGS"
+                            },
+                            {
+                                "propertyOrder": 3
+                            }
+                        ]
+                    },
+                    "state": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:server#/definitions/ADS-PLC1.IIN_Base.ST_CYL_STATE"
+                            },
+                            {
+                                "propertyOrder": 1
+                            }
+                        ]
+                    }
+                },
+                "required": [
+                    "state",
+                    "service",
+                    "settings",
+                    "dis"
+                ],
+                "type": "object"
+            },
+            "ADS-PLC1.IIN_Base.ST_CYL_SERVICE": {
+                "additionalProperties": false,
+                "properties": {
+                    "iForceCloseOff": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "propertyOrder": 6
+                            }
+                        ]
+                    },
+                    "iForceCloseOn": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "propertyOrder": 5
+                            }
+                        ]
+                    },
+                    "iForceOpenOff": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "propertyOrder": 4
+                            }
+                        ]
+                    },
+                    "iForceOpenOn": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "comment": "Available in SERVICE mode",
+                                "propertyOrder": 3
+                            }
+                        ]
+                    },
+                    "iManualClose": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "propertyOrder": 2
+                            }
+                        ]
+                    },
+                    "iManualOpen": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "comment": "Available in MANUAL mode",
+                                "propertyOrder": 1
+                            }
+                        ]
+                    },
+                    "resetCount": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "comment": "Reset total duration counter",
+                                "propertyOrder": 7
+                            }
+                        ]
+                    }
+                },
+                "required": [
+                    "iManualOpen",
+                    "iManualClose",
+                    "iForceOpenOn",
+                    "iForceOpenOff",
+                    "iForceCloseOn",
+                    "iForceCloseOff",
+                    "resetCount"
+                ],
+                "type": "object"
+            },
+            "ADS-PLC1.IIN_Base.ST_CYL_SETTINGS": {
+                "additionalProperties": false,
+                "attributes": {
+                    "$extends": [
+                        "tchmi:server#/definitions/ADS-PLC1.IIN_Base.ST_BASE_SETTINGS"
+                    ],
+                    "TcExtends": "IIN_Base.ST_BASE_SETTINGS"
+                },
+                "properties": {
+                    "doHide": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "propertyOrder": 2
+                            }
+                        ]
+                    },
+                    "name": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:server#/definitions/ADS-PLC1.IIN_Base.T_SHORT_STR"
+                            },
+                            {
+                                "propertyOrder": 1
+                            }
+                        ]
+                    },
+                    "simulationTime": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/TIME"
+                            },
+                            {
+                                "propertyOrder": 4
+                            }
+                        ]
+                    },
+                    "timeOutTime": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/TIME"
+                            },
+                            {
+                                "comment": "Max time for the cylinder to reach open/close position",
+                                "propertyOrder": 3
+                            }
+                        ]
+                    }
+                },
+                "required": [
+                    "name",
+                    "doHide",
+                    "timeOutTime",
+                    "simulationTime"
+                ],
+                "type": "object"
+            },
+            "ADS-PLC1.IIN_Base.ST_CYL_STATE": {
+                "additionalProperties": false,
+                "properties": {
+                    "airPressureOk": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "propertyOrder": 24
+                            }
+                        ]
+                    },
+                    "alarm": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "propertyOrder": 17
+                            }
+                        ]
+                    },
+                    "alarmType": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/INT"
+                            },
+                            {
+                                "propertyOrder": 18
+                            }
+                        ]
+                    },
+                    "checkSa": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "propertyOrder": 22
+                            }
+                        ]
+                    },
+                    "closeForced": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "propertyOrder": 12
+                            }
+                        ]
+                    },
+                    "closeInterlock": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "comment": "Interlock for closing the cylinder",
+                                "propertyOrder": 6
+                            }
+                        ]
+                    },
+                    "closeReq": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "comment": "Request to close the cylinder",
+                                "propertyOrder": 2
+                            }
+                        ]
+                    },
+                    "closed": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "comment": "Will close the cylinder",
+                                "propertyOrder": 10
+                            }
+                        ]
+                    },
+                    "closedPosForced": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "comment": "Closed position sensor is forced",
+                                "propertyOrder": 20
+                            }
+                        ]
+                    },
+                    "deactive": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "comment": "TRUE when this FB is de-activated",
+                                "propertyOrder": 14
+                            }
+                        ]
+                    },
+                    "fixedSettings": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:server#/definitions/ADS-PLC1.IIN_Base.ST_FIXED_SETTINGS"
+                            },
+                            {
+                                "comment": "Fixed settings",
+                                "propertyOrder": 15
+                            }
+                        ]
+                    },
+                    "forced": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "propertyOrder": 13
+                            }
+                        ]
+                    },
+                    "inClosedPos": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "propertyOrder": 4
+                            }
+                        ]
+                    },
+                    "inOpenPos": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "propertyOrder": 3
+                            }
+                        ]
+                    },
+                    "keepOutputsOn": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "propertyOrder": 16
+                            }
+                        ]
+                    },
+                    "manualExtCloseReq": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "propertyOrder": 8
+                            }
+                        ]
+                    },
+                    "manualExtOpenReq": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "propertyOrder": 7
+                            }
+                        ]
+                    },
+                    "open": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "comment": "Will open the cylinder",
+                                "propertyOrder": 9
+                            }
+                        ]
+                    },
+                    "openForced": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "propertyOrder": 11
+                            }
+                        ]
+                    },
+                    "openInterlock": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "comment": "Interlock for opening the cylinder",
+                                "propertyOrder": 5
+                            }
+                        ]
+                    },
+                    "openPosForced": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "comment": "Open position sensor is forced",
+                                "propertyOrder": 19
+                            }
+                        ]
+                    },
+                    "openReq": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "comment": "Request to open the cylinder",
+                                "propertyOrder": 1
+                            }
+                        ]
+                    },
+                    "saOk": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "propertyOrder": 23
+                            }
+                        ]
+                    },
+                    "stats": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:server#/definitions/ADS-PLC1.IIN_Base.ST_STATS_HMI"
+                            },
+                            {
+                                "comment": "inputs:\t\t\t\tARRAY[0..1] OF ST_DI_HMI;\t\t\t// For displaying different data in VISU",
+                                "propertyOrder": 21
+                            }
+                        ]
+                    }
+                },
+                "required": [
+                    "openReq",
+                    "closeReq",
+                    "inOpenPos",
+                    "inClosedPos",
+                    "openInterlock",
+                    "closeInterlock",
+                    "manualExtOpenReq",
+                    "manualExtCloseReq",
+                    "open",
+                    "closed",
+                    "openForced",
+                    "closeForced",
+                    "forced",
+                    "deactive",
+                    "fixedSettings",
+                    "keepOutputsOn",
+                    "alarm",
+                    "alarmType",
+                    "openPosForced",
+                    "closedPosForced",
+                    "stats",
+                    "checkSa",
+                    "saOk",
+                    "airPressureOk"
+                ],
+                "type": "object"
+            },
+            "ADS-PLC1.IIN_Base.ST_DI_HMI": {
+                "additionalProperties": false,
+                "properties": {
+                    "alarmSettings": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:server#/definitions/ADS-PLC1.IIN_Base.ST_ALARM_FIXED_SETTINGS"
+                            },
+                            {
+                                "propertyOrder": 4
+                            }
+                        ]
+                    },
+                    "service": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:server#/definitions/ADS-PLC1.IIN_Base.ST_DI_SERVICE"
+                            },
+                            {
+                                "propertyOrder": 2
+                            }
+                        ]
+                    },
+                    "settings": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:server#/definitions/ADS-PLC1.IIN_Base.ST_DI_SETTINGS"
+                            },
+                            {
+                                "propertyOrder": 3
+                            }
+                        ]
+                    },
+                    "state": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:server#/definitions/ADS-PLC1.IIN_Base.ST_DI_STATE"
+                            },
+                            {
+                                "propertyOrder": 1
+                            }
+                        ]
+                    }
+                },
+                "required": [
+                    "state",
+                    "service",
+                    "settings",
+                    "alarmSettings"
+                ],
+                "type": "object"
+            },
+            "ADS-PLC1.IIN_Base.ST_DI_SERVICE": {
+                "additionalProperties": false,
+                "properties": {
+                    "forceOff": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "propertyOrder": 2
+                            }
+                        ]
+                    },
+                    "forceOn": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "propertyOrder": 1
+                            }
+                        ]
+                    }
+                },
+                "required": [
+                    "forceOn",
+                    "forceOff"
+                ],
+                "type": "object"
+            },
+            "ADS-PLC1.IIN_Base.ST_DI_SETTINGS": {
+                "additionalProperties": false,
+                "attributes": {
+                    "$extends": [
+                        "tchmi:server#/definitions/ADS-PLC1.IIN_Base.ST_BASE_SETTINGS"
+                    ],
+                    "TcExtends": "IIN_Base.ST_BASE_SETTINGS"
+                },
+                "properties": {
+                    "doHide": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "propertyOrder": 2
+                            }
+                        ]
+                    },
+                    "logFallingEdge": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "propertyOrder": 6
+                            }
+                        ]
+                    },
+                    "logRisingEdge": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "propertyOrder": 5
+                            }
+                        ]
+                    },
+                    "name": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:server#/definitions/ADS-PLC1.IIN_Base.T_SHORT_STR"
+                            },
+                            {
+                                "propertyOrder": 1
+                            }
+                        ]
+                    },
+                    "offDelay": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/TIME"
+                            },
+                            {
+                                "propertyOrder": 4
+                            }
+                        ]
+                    },
+                    "onDelay": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/TIME"
+                            },
+                            {
+                                "propertyOrder": 3
+                            }
+                        ]
+                    }
+                },
+                "required": [
+                    "name",
+                    "doHide",
+                    "onDelay",
+                    "offDelay",
+                    "logRisingEdge",
+                    "logFallingEdge"
+                ],
+                "type": "object"
+            },
+            "ADS-PLC1.IIN_Base.ST_DI_STATE": {
+                "additionalProperties": false,
+                "properties": {
+                    "alarm": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "propertyOrder": 6
+                            }
+                        ]
+                    },
+                    "alarmSettings": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:server#/definitions/ADS-PLC1.IIN_Base.ST_ALARM_FIXED_SETTINGS"
+                            },
+                            {
+                                "propertyOrder": 7
+                            }
+                        ]
+                    },
+                    "fixedSettings": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:server#/definitions/ADS-PLC1.IIN_Base.ST_FIXED_SETTINGS"
+                            },
+                            {
+                                "propertyOrder": 4
+                            }
+                        ]
+                    },
+                    "forced": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "propertyOrder": 3
+                            }
+                        ]
+                    },
+                    "in": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "propertyOrder": 2
+                            }
+                        ]
+                    },
+                    "negativeLogic": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "propertyOrder": 5
+                            }
+                        ]
+                    },
+                    "rawIn": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "propertyOrder": 1
+                            }
+                        ]
+                    }
+                },
+                "required": [
+                    "rawIn",
+                    "in",
+                    "forced",
+                    "fixedSettings",
+                    "negativeLogic",
+                    "alarm",
+                    "alarmSettings"
+                ],
+                "type": "object"
+            },
+            "ADS-PLC1.IIN_Base.ST_FIXED_SETTINGS": {
+                "additionalProperties": false,
+                "properties": {
+                    "deviceId": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:server#/definitions/ADS-PLC1.IIN_Base.T_DEVICE_ID"
+                            },
+                            {
+                                "propertyOrder": 3
+                            }
+                        ]
+                    },
+                    "deviceType": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/INT"
+                            },
+                            {
+                                "comment": "Text list needs INT",
+                                "propertyOrder": 2
+                            }
+                        ]
+                    },
+                    "pos": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:server#/definitions/ADS-PLC1.IIN_Base.E_POS"
+                            },
+                            {
+                                "propertyOrder": 1
+                            }
+                        ]
+                    }
+                },
+                "required": [
+                    "pos",
+                    "deviceType",
+                    "deviceId"
+                ],
+                "type": "object"
+            },
+            "ADS-PLC1.IIN_Base.ST_STATISTICS_TABLE": {
+                "additionalProperties": false,
+                "properties": {
+                    "rows": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:server#/definitions/ADS-PLC1.ARRAY_0..9_OF-IIN_Base.ST_STATISTIC_ROW"
+                            },
+                            {
+                                "propertyOrder": 2
+                            }
+                        ]
+                    },
+                    "title": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:server#/definitions/ADS-PLC1.IIN_Base.T_SHORT_STR"
+                            },
+                            {
+                                "propertyOrder": 1
+                            }
+                        ]
+                    }
+                },
+                "required": [
+                    "title",
+                    "rows"
+                ],
+                "type": "object"
+            },
+            "ADS-PLC1.IIN_Base.ST_STATISTIC_ROW": {
+                "additionalProperties": false,
+                "properties": {
+                    "data": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:server#/definitions/ADS-PLC1.IIN_Base.T_SHORT_STR"
+                            },
+                            {
+                                "propertyOrder": 2
+                            }
+                        ]
+                    },
+                    "title": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:server#/definitions/ADS-PLC1.IIN_Base.T_SHORT_STR"
+                            },
+                            {
+                                "propertyOrder": 1
+                            }
+                        ]
+                    }
+                },
+                "required": [
+                    "title",
+                    "data"
+                ],
+                "type": "object"
+            },
+            "ADS-PLC1.IIN_Base.ST_STATS_HMI": {
+                "additionalProperties": false,
+                "properties": {
+                    "stats": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:server#/definitions/ADS-PLC1.IIN_Base.ST_STATISTICS_TABLE"
+                            },
+                            {
+                                "propertyOrder": 1
+                            }
+                        ]
+                    }
+                },
+                "required": [
+                    "stats"
+                ],
+                "type": "object"
+            },
+            "ADS-PLC1.IIN_Base.ST_THERMOSTAT_HMI": {
+                "additionalProperties": false,
+                "properties": {
+                    "service": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:server#/definitions/ADS-PLC1.IIN_Base.ST_THERMOSTAT_SERVICE"
+                            },
+                            {
+                                "propertyOrder": 2
+                            }
+                        ]
+                    },
+                    "state": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:server#/definitions/ADS-PLC1.IIN_Base.ST_THERMOSTAT_STATE"
+                            },
+                            {
+                                "propertyOrder": 1
+                            }
+                        ]
+                    }
+                },
+                "required": [
+                    "state",
+                    "service"
+                ],
+                "type": "object"
+            },
+            "ADS-PLC1.IIN_Base.ST_THERMOSTAT_SERVICE": {
+                "additionalProperties": false,
+                "properties": {
+                    "forceCoolingOff": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "propertyOrder": 3
+                            }
+                        ]
+                    },
+                    "forceCoolingOn": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "propertyOrder": 4
+                            }
+                        ]
+                    },
+                    "forceHeatingOff": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "propertyOrder": 1
+                            }
+                        ]
+                    },
+                    "forceHeatingOn": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "propertyOrder": 2
+                            }
+                        ]
+                    }
+                },
+                "required": [
+                    "forceHeatingOff",
+                    "forceHeatingOn",
+                    "forceCoolingOff",
+                    "forceCoolingOn"
+                ],
+                "type": "object"
+            },
+            "ADS-PLC1.IIN_Base.ST_THERMOSTAT_STATE": {
+                "additionalProperties": false,
+                "properties": {
+                    "cool": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "propertyOrder": 2
+                            }
+                        ]
+                    },
+                    "coolingForced": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "propertyOrder": 4
+                            }
+                        ]
+                    },
+                    "fixedSettings": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:server#/definitions/ADS-PLC1.IIN_Base.ST_FIXED_SETTINGS"
+                            },
+                            {
+                                "propertyOrder": 5
+                            }
+                        ]
+                    },
+                    "heat": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "propertyOrder": 1
+                            }
+                        ]
+                    },
+                    "heatingForced": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "propertyOrder": 3
+                            }
+                        ]
+                    }
+                },
+                "required": [
+                    "heat",
+                    "cool",
+                    "heatingForced",
+                    "coolingForced",
+                    "fixedSettings"
+                ],
+                "type": "object"
+            },
+            "ADS-PLC1.IIN_Base.T_DEVICE_ID": {
+                "$ref": "tchmi:general#/definitions/STRING%2880%29"
+            },
+            "ADS-PLC1.IIN_Base.T_SHORT_STR": {
+                "$ref": "tchmi:general#/definitions/STRING%2880%29"
+            },
             "ADS-PLC1.ITcVnDisplayableImage": {
                 "additionalProperties": false,
                 "attributes": {
@@ -266,6 +2151,118 @@
                         "$ref": "tchmi:general#/definitions/BOOL"
                     }
                 ]
+            },
+            "ADS-PLC1.ST_CURING_STATION_HMI": {
+                "additionalProperties": false,
+                "properties": {
+                    "gripper": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:server#/definitions/ADS-PLC1.IIN_Base.ST_CYL_HMI"
+                            },
+                            {
+                                "propertyOrder": 4
+                            }
+                        ]
+                    },
+                    "heater": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:server#/definitions/ADS-PLC1.ST_HEATER_HMI"
+                            },
+                            {
+                                "propertyOrder": 6
+                            }
+                        ]
+                    },
+                    "service": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:server#/definitions/ADS-PLC1.ST_CURING_STATION_SERVICE"
+                            },
+                            {
+                                "propertyOrder": 2
+                            }
+                        ]
+                    },
+                    "settings": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:server#/definitions/ADS-PLC1.ST_CURING_STATION_SETTINGS"
+                            },
+                            {
+                                "propertyOrder": 3
+                            }
+                        ]
+                    },
+                    "slider": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:server#/definitions/ADS-PLC1.IIN_Base.ST_CYL_HMI"
+                            },
+                            {
+                                "propertyOrder": 5
+                            }
+                        ]
+                    },
+                    "state": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:server#/definitions/ADS-PLC1.ST_CURING_STATION_STATE"
+                            },
+                            {
+                                "propertyOrder": 1
+                            }
+                        ]
+                    }
+                },
+                "required": [
+                    "state",
+                    "service",
+                    "settings",
+                    "gripper",
+                    "slider",
+                    "heater"
+                ],
+                "type": "object"
+            },
+            "ADS-PLC1.ST_CURING_STATION_SERVICE": {
+                "additionalProperties": false,
+                "type": "object"
+            },
+            "ADS-PLC1.ST_CURING_STATION_SETTINGS": {
+                "additionalProperties": false,
+                "type": "object"
+            },
+            "ADS-PLC1.ST_CURING_STATION_STATE": {
+                "additionalProperties": false,
+                "properties": {
+                    "operationState": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:server#/definitions/ADS-PLC1.E_CURING_STATION_OPERATION_STATE"
+                            },
+                            {
+                                "propertyOrder": 2
+                            }
+                        ]
+                    },
+                    "stationId": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/UDINT"
+                            },
+                            {
+                                "propertyOrder": 1
+                            }
+                        ]
+                    }
+                },
+                "required": [
+                    "stationId",
+                    "operationState"
+                ],
+                "type": "object"
             },
             "ADS-PLC1.ST_ConveyorHmi": {
                 "additionalProperties": false,
@@ -338,6 +2335,204 @@
                     "bJogForwardConv2",
                     "bJogBackwardConv2",
                     "fStepperVelocityPrecentage"
+                ],
+                "type": "object"
+            },
+            "ADS-PLC1.ST_HEATER_HMI": {
+                "additionalProperties": false,
+                "properties": {
+                    "ai": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:server#/definitions/ADS-PLC1.IIN_Base.ST_AI_HMI"
+                            },
+                            {
+                                "propertyOrder": 4
+                            }
+                        ]
+                    },
+                    "service": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:server#/definitions/ADS-PLC1.ST_HEATER_SERVICE"
+                            },
+                            {
+                                "propertyOrder": 2
+                            }
+                        ]
+                    },
+                    "settings": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:server#/definitions/ADS-PLC1.ST_HEATER_SETTINGS"
+                            },
+                            {
+                                "propertyOrder": 3
+                            }
+                        ]
+                    },
+                    "state": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:server#/definitions/ADS-PLC1.ST_HEATER_STATE"
+                            },
+                            {
+                                "propertyOrder": 1
+                            }
+                        ]
+                    },
+                    "thermostat": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:server#/definitions/ADS-PLC1.IIN_Base.ST_THERMOSTAT_HMI"
+                            },
+                            {
+                                "propertyOrder": 5
+                            }
+                        ]
+                    }
+                },
+                "required": [
+                    "state",
+                    "service",
+                    "settings",
+                    "ai",
+                    "thermostat"
+                ],
+                "type": "object"
+            },
+            "ADS-PLC1.ST_HEATER_SERVICE": {
+                "additionalProperties": false,
+                "properties": {
+                    "enable": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "comment": "Setting on/off will enable the station",
+                                "propertyOrder": 1
+                            }
+                        ]
+                    }
+                },
+                "required": [
+                    "enable"
+                ],
+                "type": "object"
+            },
+            "ADS-PLC1.ST_HEATER_SETTINGS": {
+                "additionalProperties": false,
+                "properties": {
+                    "targetTemperature": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/REAL"
+                            },
+                            {
+                                "propertyOrder": 1
+                            }
+                        ]
+                    }
+                },
+                "required": [
+                    "targetTemperature"
+                ],
+                "type": "object"
+            },
+            "ADS-PLC1.ST_HEATER_STATE": {
+                "additionalProperties": false,
+                "properties": {
+                    "enabled": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "propertyOrder": 1
+                            }
+                        ]
+                    },
+                    "fan": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "propertyOrder": 3
+                            }
+                        ]
+                    },
+                    "heat": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "propertyOrder": 2
+                            }
+                        ]
+                    },
+                    "stationId": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/UDINT"
+                            },
+                            {
+                                "propertyOrder": 8
+                            }
+                        ]
+                    },
+                    "tempInC": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/REAL"
+                            },
+                            {
+                                "propertyOrder": 4
+                            }
+                        ]
+                    },
+                    "tempInF": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/REAL"
+                            },
+                            {
+                                "propertyOrder": 5
+                            }
+                        ]
+                    },
+                    "testTemperatureReached": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "propertyOrder": 6
+                            }
+                        ]
+                    },
+                    "workTemperatureReached": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "propertyOrder": 7
+                            }
+                        ]
+                    }
+                },
+                "required": [
+                    "enabled",
+                    "heat",
+                    "fan",
+                    "tempInC",
+                    "tempInF",
+                    "testTemperatureReached",
+                    "workTemperatureReached",
+                    "stationId"
                 ],
                 "type": "object"
             },
@@ -1567,6 +3762,27 @@
             "OPTIONS": {},
             "SCHEMA": {
                 "function": true
+            },
+            "USEMAPPING": true
+        },
+        "ADS.PLC1.HMI.curingStations": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "HIDDEN": false,
+            "MAPPING": "PLC1::HMI::curingStations",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "addSymbol": true,
+                        "attributes": {
+                            "TcHmiSymbol.ShowRecursively": ""
+                        }
+                    },
+                    {
+                        "$ref": "tchmi:server#/definitions/ADS-PLC1.ARRAY_0..4_OF-ST_CURING_STATION_HMI"
+                    }
+                ]
             },
             "USEMAPPING": true
         },
