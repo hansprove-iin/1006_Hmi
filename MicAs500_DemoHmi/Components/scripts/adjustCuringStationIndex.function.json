@@ -1,0 +1,81 @@
+{
+  "function": {
+    "name": "adjustCuringStationIndex",
+    "namespace": "TcHmi.Functions.MicAs500_DemoHmi",
+    "displayName": "adjustCuringStationIndex",
+    "description": "",
+    "waitMode": "Synchronous",
+    "category": "",
+    "returnValue": {
+      "type": "tchmi:general#/definitions/String"
+    },
+    "visible": true,
+    "injectContextObject": false,
+    "arguments": [
+      {
+        "name": "inc",
+        "displayName": "inc",
+        "type": "tchmi:general#/definitions/Boolean",
+        "description": "This is an important Parameter which does... This text is used in a tooltip.",
+        "defaultValue": null,
+        "required": true,
+        "bindable": true,
+        "restParameter": false,
+        "asReference": false,
+        "allowControlAttributeBindingOptions": false
+      },
+      {
+        "name": "dec",
+        "displayName": "dec",
+        "type": "tchmi:general#/definitions/Boolean",
+        "description": "",
+        "defaultValue": null,
+        "required": false,
+        "bindable": true,
+        "restParameter": false,
+        "asReference": false,
+        "allowControlAttributeBindingOptions": false
+      },
+      {
+        "name": "idx",
+        "displayName": "idx",
+        "type": "tchmi:general#/definitions/String",
+        "description": "",
+        "defaultValue": null,
+        "required": false,
+        "bindable": true,
+        "restParameter": false,
+        "asReference": false,
+        "allowControlAttributeBindingOptions": false
+      },
+      {
+        "name": "maxIdx",
+        "displayName": "maxIdx",
+        "type": "tchmi:general#/definitions/Integer",
+        "description": "",
+        "defaultValue": null,
+        "required": false,
+        "bindable": true,
+        "restParameter": false,
+        "asReference": false,
+        "allowControlAttributeBindingOptions": false
+      }
+    ]
+  },
+  "$schema": "./../../../../1006_CompleteSolution/Packages/Beckhoff.TwinCAT.HMI.Framework.14.3.350/runtimes/native1.12-tchmi/Schema/FunctionDescription.Schema.json",
+  "apiVersion": 1,
+  "version": {
+    "full": "0.0.0.0",
+    "major": 0,
+    "minor": 0,
+    "revision": 0,
+    "build": 0
+  },
+  "dependencyFiles": [
+    {
+      "name": "adjustCuringStationIndex.js",
+      "type": "JavaScript",
+      "description": ""
+    }
+  ]
+}

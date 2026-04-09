@@ -16,6 +16,23 @@
       "readOnly": false,
       "heritable": true,
       "propertyName": "hmi"
+    },
+    {
+      "allowSymbolExpressionsInObject": false,
+      "requiredOnCompile": false,
+      "bindable": true,
+      "propertySetterName": "set_cylVisibleBool",
+      "propertyGetterName": "get_cylVisibleBool",
+      "refTo": "",
+      "name": "data-tchmi-_cylvisiblebool",
+      "displayName": "_cylVisibleBool",
+      "visible": true,
+      "type": "tchmi:general#/definitions/Boolean",
+      "category": "",
+      "description": "",
+      "readOnly": false,
+      "heritable": true,
+      "propertyName": "_cylVisibleBool"
     }
   ],
   "virtualRights": [],

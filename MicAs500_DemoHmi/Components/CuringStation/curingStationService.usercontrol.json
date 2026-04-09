@@ -1,0 +1,41 @@
+{
+  "parameters": [
+    {
+      "allowSymbolExpressionsInObject": false,
+      "requiredOnCompile": false,
+      "bindable": true,
+      "propertySetterName": "setHmi",
+      "propertyGetterName": "getHmi",
+      "refTo": "",
+      "name": "data-tchmi-hmi",
+      "displayName": "hmi",
+      "visible": true,
+      "type": "tchmi:server#/definitions/ADS-PLC1.REFERENCE-TO-ST_CURING_STATION_HMI",
+      "category": "",
+      "description": "",
+      "readOnly": false,
+      "heritable": true,
+      "propertyName": "hmi"
+    },
+    {
+      "allowSymbolExpressionsInObject": false,
+      "requiredOnCompile": false,
+      "bindable": true,
+      "propertySetterName": "set_cylVisibleBool",
+      "propertyGetterName": "get_cylVisibleBool",
+      "refTo": "",
+      "name": "data-tchmi-_cylvisiblebool",
+      "displayName": "_cylVisibleBool",
+      "visible": true,
+      "type": "tchmi:general#/definitions/Boolean",
+      "category": "",
+      "description": "",
+      "readOnly": false,
+      "heritable": true,
+      "propertyName": "_cylVisibleBool"
+    }
+  ],
+  "virtualRights": [],
+  "$schema": "./../../Packages/Beckhoff.TwinCAT.HMI.Framework.14.3.350/runtimes/native1.12-tchmi/Schema/UserControlConfig.Schema.json",
+  "description": ""
+}

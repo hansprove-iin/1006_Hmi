@@ -92,6 +92,16 @@
       "type": "Stylesheet"
     },
     {
+      "name": "Components/ControlSignals/ReadCs.js",
+      "description": "",
+      "type": "JavaScript"
+    },
+    {
+      "name": "Components/scripts/adjustCuringStationIndex.js",
+      "description": "",
+      "type": "JavaScript"
+    },
+    {
       "name": "Components/scripts/fileSelected.js",
       "description": "",
       "type": "JavaScript"
@@ -139,7 +149,16 @@
   ],
   "userControls": [
     {
-      "url": "Components/CuringStation/curingStation.usercontrol"
+      "url": "Components/ControlSignals/ControlSignal.usercontrol"
+    },
+    {
+      "url": "Components/ControlSignals/ControlSignalsSettings.usercontrol"
+    },
+    {
+      "url": "Components/CuringStation/curingStationMinimal.usercontrol"
+    },
+    {
+      "url": "Components/CuringStation/curingStationService.usercontrol"
     },
     {
       "url": "Components/Cylinder/CylHorRightLink.usercontrol"
@@ -160,13 +179,6 @@
   "controls": [],
   "content": [
     {
-      "url": "Navi/Cameras.content",
-      "preload": false,
-      "keepAlive": false,
-      "loadSync": false,
-      "preloadBindings": false
-    },
-    {
       "url": "Navi/ConveyorsContents.content",
       "preload": false,
       "keepAlive": false,
@@ -174,21 +186,14 @@
       "preloadBindings": false
     },
     {
-      "url": "Navi/EventLogger.content",
+      "url": "Navi/CuringStations.content",
       "preload": false,
       "keepAlive": false,
       "loadSync": false,
       "preloadBindings": false
     },
     {
-      "url": "Navi/GlueScreen.content",
-      "preload": false,
-      "keepAlive": false,
-      "loadSync": false,
-      "preloadBindings": false
-    },
-    {
-      "url": "Navi/LinearAxis.content",
+      "url": "Navi/CuringStationsService.content",
       "preload": false,
       "keepAlive": false,
       "loadSync": false,
@@ -196,13 +201,6 @@
     },
     {
       "url": "Navi/MainContents.content",
-      "preload": false,
-      "keepAlive": false,
-      "loadSync": false,
-      "preloadBindings": false
-    },
-    {
-      "url": "Navi/ManualRobotControl.content",
       "preload": false,
       "keepAlive": false,
       "loadSync": false,
@@ -228,27 +226,6 @@
       "keepAlive": false,
       "loadSync": false,
       "preloadBindings": false
-    },
-    {
-      "url": "Navi/RecipeScreen1.content",
-      "preload": false,
-      "keepAlive": false,
-      "loadSync": false,
-      "preloadBindings": false
-    },
-    {
-      "url": "Navi/RecipeScreen2.content",
-      "preload": false,
-      "keepAlive": false,
-      "loadSync": false,
-      "preloadBindings": false
-    },
-    {
-      "url": "Navi/SCARAContents.content",
-      "preload": false,
-      "keepAlive": false,
-      "loadSync": false,
-      "preloadBindings": false
     }
   ],
   "views": [
@@ -260,6 +237,12 @@
     }
   ],
   "userFunctions": [
+    {
+      "url": "Components/ControlSignals/ReadCs.js"
+    },
+    {
+      "url": "Components/scripts/adjustCuringStationIndex.js"
+    },
     {
       "url": "Components/scripts/fileSelected.js"
     },
@@ -297,6 +280,12 @@
           "AL-86068"
         ],
         "type": "tchmi:framework#/definitions/MultipleRecipeReferences",
+        "persist": false,
+        "readonly": false
+      },
+      "curingStationSelection": {
+        "value": 1,
+        "type": "tchmi:general#/definitions/INT",
         "persist": false,
         "readonly": false
       }

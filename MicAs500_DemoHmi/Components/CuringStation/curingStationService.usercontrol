@@ -1,0 +1,13 @@
+<div id="curingStation" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControl" data-tchmi-top="0" data-tchmi-left="0" data-tchmi-width="1657" data-tchmi-height="711" data-tchmi-width-unit="px" data-tchmi-height-unit="px" data-tchmi-creator-viewport-width="500" data-tchmi-creator-viewport-height="500">
+
+<div id="CylHorRightLink_3" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="152" data-tchmi-height-unit="px" data-tchmi-left="28" data-tchmi-left-unit="px" data-tchmi-target-user-control="Components/Cylinder/CylHorRightLink.usercontrol" data-tchmi-top="116" data-tchmi-top-unit="px" data-tchmi-width="478" data-tchmi-width-unit="px" data-tchmi-hmi="%pp%hmi::slider%/pp%">
+</div>
+<div id="UserControl1_7" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="707" data-tchmi-height-unit="px" data-tchmi-left="524" data-tchmi-left-unit="px" data-tchmi-target-user-control="Components/Cylinder/Cylinder.usercontrol" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-width="796" data-tchmi-width-unit="px" data-tchmi-_selfvisiblebool="%pp%_cylVisibleBool%/pp%" data-tchmi-hmi="%f%%pp%hmi::cyls[%pp%_idx%/pp%]%/pp%%/f%">
+</div>
+<div id="CylHorRightLink_4" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="152" data-tchmi-height-unit="px" data-tchmi-left="28" data-tchmi-left-unit="px" data-tchmi-target-user-control="Components/Cylinder/CylHorRightLink.usercontrol" data-tchmi-top="284" data-tchmi-top-unit="px" data-tchmi-width="478" data-tchmi-width-unit="px" data-tchmi-hmi="%pp%hmi::gripper%/pp%">
+</div>
+<div id="CuringStation_5" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="74" data-tchmi-height-unit="px" data-tchmi-left="10" data-tchmi-left-unit="px" data-tchmi-target-user-control="Components/CuringStation/curingStationMinimal.usercontrol" data-tchmi-top="10" data-tchmi-top-unit="px" data-tchmi-width="506" data-tchmi-width-unit="px" data-tchmi-hmi="%pp%hmi%/pp%">
+</div>
+<div id="ControlSignal_1" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="137" data-tchmi-height-unit="px" data-tchmi-left="28" data-tchmi-left-unit="px" data-tchmi-target-user-control="Components/ControlSignals/ControlSignal.usercontrol" data-tchmi-top="506" data-tchmi-top-unit="px" data-tchmi-width="419" data-tchmi-width-unit="px" data-tchmi-hmi="%s%ADS.PLC1.HMI.cs%/s%">
+</div>
+</div>

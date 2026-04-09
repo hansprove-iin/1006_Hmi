@@ -1,4 +1,4 @@
-<div id="Desktop" data-tchmi-type="TcHmi.Controls.System.TcHmiView" data-tchmi-top="0" data-tchmi-left="0" data-tchmi-width-mode="Value" data-tchmi-height-mode="Value" data-tchmi-creator-viewport-width="1920" data-tchmi-creator-viewport-height="515" data-tchmi-creator-visibility="Visible" data-tchmi-background-image="Images/MainBg/Etusivu tausta ruudukolla.png" data-tchmi-bottom-unit="px" data-tchmi-right-unit="px" data-tchmi-width="1920" data-tchmi-height="515" data-tchmi-zindex="11">
+<div id="Desktop" data-tchmi-type="TcHmi.Controls.System.TcHmiView" data-tchmi-top="0" data-tchmi-left="0" data-tchmi-width-mode="Value" data-tchmi-height-mode="Value" data-tchmi-creator-viewport-width="1920" data-tchmi-creator-viewport-height="515" data-tchmi-creator-visibility="Visible" data-tchmi-background-image="Images/MainBg/Etusivu tausta ruudukolla.png" data-tchmi-bottom-unit="px" data-tchmi-right-unit="px" data-tchmi-width="1920" data-tchmi-height="812" data-tchmi-zindex="11">
 
 
 <div id="TimeGrid" data-tchmi-type="TcHmi.Controls.System.TcHmiGrid" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-right="0" data-tchmi-bottom="440" data-tchmi-left="1536" data-tchmi-zindex="61" data-tchmi-creator-visibility="Visible">
@@ -2358,7 +2358,7 @@
               {
                 "objectType": "WriteToSymbol",
                 "active": true,
-                "symbolExpression": "%ctrl%TcHmiButton_106::Visibility%/ctrl%",
+                "symbolExpression": "%ctrl%incCuringStationIdxBtn6::Visibility%/ctrl%",
                 "value": {
                   "objectType": "StaticValue",
                   "valueType": "tchmi:framework#/definitions/Visibility",
@@ -2397,7 +2397,7 @@
               {
                 "objectType": "WriteToSymbol",
                 "active": true,
-                "symbolExpression": "%ctrl%TcHmiButton_106::Visibility%/ctrl%",
+                "symbolExpression": "%ctrl%incCuringStationIdxBtn6::Visibility%/ctrl%",
                 "value": {
                   "objectType": "StaticValue",
                   "valueType": "tchmi:framework#/definitions/Visibility",
@@ -7493,6 +7493,29 @@
 </script>
 </div>
 </div>
-<div id="CuringStation_2" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="173" data-tchmi-height-unit="px" data-tchmi-left="49" data-tchmi-left-unit="px" data-tchmi-target-user-control="Components/CuringStation/curingStation.usercontrol" data-tchmi-top="16" data-tchmi-top-unit="px" data-tchmi-width="949" data-tchmi-width-unit="px" data-tchmi-hmi="%s%ADS.PLC1.HMI.curingStations[0]%/s%">
+<div id="CuringRegion" data-tchmi-type="TcHmi.Controls.System.TcHmiRegion" data-tchmi-height="802" data-tchmi-height-unit="px" data-tchmi-left="10" data-tchmi-left-unit="px" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-width="1593" data-tchmi-width-unit="px">
+</div>
+<div id="TcHmiButton_137" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiButton" data-tchmi-height="50" data-tchmi-height-unit="px" data-tchmi-left="1710" data-tchmi-left-unit="px" data-tchmi-text="Button" data-tchmi-top="668" data-tchmi-top-unit="px" data-tchmi-width="100" data-tchmi-width-unit="px" data-tchmi-word-wrap="True">
+
+<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
+[
+  {
+    "event": "%ctx%owner::Id|EventRegistrationMode=Resolve%/ctx%.onPressed",
+    "actions": [
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%ctrl%CuringRegion::TargetContent%/ctrl%",
+        "value": {
+          "objectType": "StaticValue",
+          "valueType": "tchmi:framework#/definitions/ContentPath",
+          "value": "Navi/CuringStations.content"
+        },
+        "asyncWait": true
+      }
+    ]
+  }
+]
+</script>
 </div>
 </div>

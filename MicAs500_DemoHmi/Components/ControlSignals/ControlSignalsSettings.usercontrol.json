@@ -1,0 +1,58 @@
+{
+  "parameters": [
+    {
+      "allowSymbolExpressionsInObject": false,
+      "requiredOnCompile": false,
+      "bindable": true,
+      "propertySetterName": "setSettings",
+      "propertyGetterName": "getSettings",
+      "refTo": "",
+      "name": "data-tchmi-settings",
+      "displayName": "settings",
+      "visible": true,
+      "type": "tchmi:server#/definitions/ADS-PLC1.TM_Base.ST_CONTROL_SIGNALS_SETTINGS-ShowRecursively",
+      "category": "",
+      "description": "",
+      "readOnly": false,
+      "heritable": true,
+      "propertyName": "settings"
+    },
+    {
+      "allowSymbolExpressionsInObject": false,
+      "requiredOnCompile": false,
+      "bindable": true,
+      "propertySetterName": "setVisible",
+      "propertyGetterName": "getVisible",
+      "refTo": "",
+      "name": "data-tchmi-visible",
+      "displayName": "visible",
+      "visible": true,
+      "type": "tchmi:framework#/definitions/Visibility",
+      "category": "",
+      "description": "",
+      "readOnly": false,
+      "heritable": true,
+      "propertyName": "visible"
+    },
+    {
+      "allowSymbolExpressionsInObject": false,
+      "requiredOnCompile": false,
+      "bindable": true,
+      "propertySetterName": "setStaticSettings",
+      "propertyGetterName": "getStaticSettings",
+      "refTo": "",
+      "name": "data-tchmi-staticsettings",
+      "displayName": "staticSettings",
+      "visible": true,
+      "type": "tchmi:server#/definitions/ADS-PLC1.IIN_Base.ST_CS_HMI",
+      "category": "",
+      "description": "",
+      "readOnly": false,
+      "heritable": true,
+      "propertyName": "staticSettings"
+    }
+  ],
+  "virtualRights": [],
+  "$schema": "./../../Packages/Beckhoff.TwinCAT.HMI.Framework.14.3.431/runtimes/native1.12-tchmi/Schema/UserControlConfig.Schema.json",
+  "description": ""
+}

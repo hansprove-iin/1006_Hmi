@@ -135,12 +135,40 @@
   <Target Name="Clean" DependsOnTargets="$(CleanDependsOn)" />
   <Target Name="ReBuild" DependsOnTargets="Clean; Build" />
   <ItemGroup>
-    <Content Include="Components\CuringStation\curingStation.usercontrol">
+    <Content Include="Components\ControlSignals\ControlSignal.usercontrol">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="Components\CuringStation\curingStation.usercontrol.json">
+    <Content Include="Components\ControlSignals\ControlSignal.usercontrol.json">
       <SubType>Content</SubType>
-      <DependentUpon>Components\CuringStation\curingStation.usercontrol</DependentUpon>
+      <DependentUpon>Components\ControlSignals\ControlSignal.usercontrol</DependentUpon>
+    </Content>
+    <Content Include="Components\ControlSignals\ControlSignalsSettings.usercontrol">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Components\ControlSignals\ControlSignalsSettings.usercontrol.json">
+      <SubType>Content</SubType>
+      <DependentUpon>Components\ControlSignals\ControlSignalsSettings.usercontrol</DependentUpon>
+    </Content>
+    <Content Include="Components\ControlSignals\ReadCs.function.json">
+      <SubType>Content</SubType>
+      <DependentUpon>Components\ControlSignals\ReadCs.js</DependentUpon>
+    </Content>
+    <Content Include="Components\ControlSignals\ReadCs.js">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Components\CuringStation\curingStationMinimal.usercontrol">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Components\CuringStation\curingStationMinimal.usercontrol.json">
+      <SubType>Content</SubType>
+      <DependentUpon>Components\CuringStation\curingStationMinimal.usercontrol</DependentUpon>
+    </Content>
+    <Content Include="Components\CuringStation\curingStationService.usercontrol">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Components\CuringStation\curingStationService.usercontrol.json">
+      <SubType>Content</SubType>
+      <DependentUpon>Components\CuringStation\curingStationService.usercontrol</DependentUpon>
     </Content>
     <Content Include="Components\Cylinder\CylHorRightLink.usercontrol">
       <SubType>Content</SubType>
@@ -176,6 +204,13 @@
     <Content Include="Components\Cylinder\MyToggleButton.usercontrol.json">
       <SubType>Content</SubType>
       <DependentUpon>Components\Cylinder\MyToggleButton.usercontrol</DependentUpon>
+    </Content>
+    <Content Include="Components\scripts\adjustCuringStationIndex.function.json">
+      <SubType>Content</SubType>
+      <DependentUpon>Components\scripts\adjustCuringStationIndex.js</DependentUpon>
+    </Content>
+    <Content Include="Components\scripts\adjustCuringStationIndex.js">
+      <SubType>Content</SubType>
     </Content>
     <Content Include="Components\scripts\fileSelected.function.json">
       <SubType>Content</SubType>
@@ -279,6 +314,7 @@
     <Content Include="Images\MainBg\vas_ylapalkki_harmaa.png">
       <SubType>Content</SubType>
     </Content>
+    <Folder Include="Components\ControlSignals" />
     <Folder Include="Components\Cylinder" />
     <Folder Include="Components\CuringStation" />
     <Folder Include="Components\scripts" />
@@ -625,25 +661,16 @@
     <Content Include="LoginPage1.html">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="Navi\Cameras.content">
+    <Content Include="Navi\CuringStationsService.content">
       <SubType>Content</SubType>
     </Content>
-    <Content Include="Navi\EventLogger.content">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="Navi\GlueScreen.content">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="Navi\LinearAxis.content">
+    <Content Include="Navi\CuringStations.content">
       <SubType>Content</SubType>
     </Content>
     <Content Include="Navi\MainContents.content">
       <SubType>Content</SubType>
     </Content>
     <Content Include="Navi\ConveyorsContents.content">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="Navi\ManualRobotControl.content">
       <SubType>Content</SubType>
     </Content>
     <Content Include="Navi\Popup\Cam1ConfPopup.content">
@@ -653,15 +680,6 @@
       <SubType>Content</SubType>
     </Content>
     <Content Include="Navi\Popup\ToolVerifyPopup.content">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="Navi\RecipeScreen1.content">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="Navi\RecipeScreen2.content">
-      <SubType>Content</SubType>
-    </Content>
-    <Content Include="Navi\SCARAContents.content">
       <SubType>Content</SubType>
     </Content>
     <Content Include="Server\ADS\ADS.Config.default.json">
