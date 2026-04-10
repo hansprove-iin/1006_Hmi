@@ -1,4 +1,4 @@
-<div id="curingStation" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControl" data-tchmi-top="0" data-tchmi-left="0" data-tchmi-width="1657" data-tchmi-height="711" data-tchmi-width-unit="px" data-tchmi-height-unit="px" data-tchmi-creator-viewport-width="500" data-tchmi-creator-viewport-height="500">
+<div id="curingStation" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControl" data-tchmi-top="0" data-tchmi-left="0" data-tchmi-width="1657" data-tchmi-height="882" data-tchmi-width-unit="px" data-tchmi-height-unit="px" data-tchmi-creator-viewport-width="500" data-tchmi-creator-viewport-height="500">
 
     <div id="CylHorRightLink_3" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="152" data-tchmi-height-unit="px" data-tchmi-left="10" data-tchmi-left-unit="px" data-tchmi-target-user-control="Components/Cylinder/CylHorRightLink.usercontrol" data-tchmi-top="94" data-tchmi-top-unit="px" data-tchmi-width="478" data-tchmi-width-unit="px" data-tchmi-hmi="%pp%hmi::cyls[0]%/pp%">
     
@@ -80,9 +80,9 @@
 </div>
     <div id="CuringStation_5" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="74" data-tchmi-height-unit="px" data-tchmi-left="10" data-tchmi-left-unit="px" data-tchmi-target-user-control="Components/CuringStation/curingStationMinimal.usercontrol" data-tchmi-top="10" data-tchmi-top-unit="px" data-tchmi-width="506" data-tchmi-width-unit="px" data-tchmi-hmi="%pp%hmi%/pp%">
     </div>
-    <div id="ControlSignal_1" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="137" data-tchmi-height-unit="px" data-tchmi-left="0" data-tchmi-left-unit="px" data-tchmi-target-user-control="Components/ControlSignals/ControlSignal.usercontrol" data-tchmi-top="564" data-tchmi-top-unit="px" data-tchmi-width="419" data-tchmi-width-unit="px" data-tchmi-hmi="%s%ADS.PLC1.HMI.cs%/s%">
+    <div id="ControlSignal_1" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="137" data-tchmi-height-unit="px" data-tchmi-left="772" data-tchmi-left-unit="px" data-tchmi-target-user-control="Components/ControlSignals/ControlSignal.usercontrol" data-tchmi-top="722" data-tchmi-top-unit="px" data-tchmi-width="419" data-tchmi-width-unit="px" data-tchmi-hmi="%s%ADS.PLC1.HMI.cs%/s%">
     </div>
-<div id="UserControl1_8" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="555" data-tchmi-height-unit="px" data-tchmi-left="508" data-tchmi-left-unit="px" data-tchmi-target-user-control="Components/AI/AnalogInput.usercontrol" data-tchmi-top="146" data-tchmi-top-unit="px" data-tchmi-width="493" data-tchmi-width-unit="px" data-tchmi-hmi="%pp%hmi::heater::ai%/pp%" data-tchmi-visible="%pp%_aiVisiblebool%/pp%" data-tchmi-_selfvisiblebool="%pp%_aiVisiblebool%/pp%" data-tchmi-visibility="%f%VisibilityFromBool(%pp%_aiVisiblebool%/pp%)%/f%" data-tchmi-zindex="2">
+<div id="UserControl1_8" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="555" data-tchmi-height-unit="px" data-tchmi-left="516" data-tchmi-left-unit="px" data-tchmi-target-user-control="Components/AI/AnalogInput.usercontrol" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-width="493" data-tchmi-width-unit="px" data-tchmi-hmi="%pp%hmi::heater::ai%/pp%" data-tchmi-visible="%pp%_aiVisiblebool%/pp%" data-tchmi-_selfvisiblebool="%pp%_aiVisiblebool%/pp%" data-tchmi-visibility="%f%VisibilityFromBool(%pp%_aiVisiblebool%/pp%)%/f%" data-tchmi-zindex="2">
 </div>
 <div id="AnalogInputLink_1" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="121" data-tchmi-height-unit="px" data-tchmi-left="10" data-tchmi-left-unit="px" data-tchmi-target-user-control="Components/AI/AnalogInputLink.usercontrol" data-tchmi-top="398" data-tchmi-top-unit="px" data-tchmi-width="478" data-tchmi-width-unit="px" data-tchmi-hmi="%pp%hmi::heater::ai%/pp%">
 
@@ -106,5 +106,7 @@
   }
 ]
 </script>
+</div>
+<div id="CuringStationHeater_1" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="424" data-tchmi-height-unit="px" data-tchmi-left="16" data-tchmi-left-unit="px" data-tchmi-target-user-control="Components/CuringStation/CuringStationHeater.usercontrol" data-tchmi-top="529" data-tchmi-top-unit="px" data-tchmi-width="737" data-tchmi-width-unit="px" data-tchmi-hmi="%pp%hmi::heater%/pp%" data-tchmi-settings="%s%ADS.PLC1.HEATER_CONTROL_SETTINGS.settings%/s%">
 </div>
 </div>

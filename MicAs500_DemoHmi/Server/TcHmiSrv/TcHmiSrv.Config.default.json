@@ -2523,6 +2523,66 @@
                 ],
                 "type": "object"
             },
+            "ADS-PLC1.IIN_Base.ST_TIME_PROPORTIONAL_THERMOSTAT_HMI": {
+                "additionalProperties": false,
+                "properties": {
+                    "state": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:server#/definitions/ADS-PLC1.IIN_Base.ST_TIME_PROPORTIONAL_THERMOSTAT_STATE"
+                            },
+                            {
+                                "propertyOrder": 1
+                            }
+                        ]
+                    }
+                },
+                "required": [
+                    "state"
+                ],
+                "type": "object"
+            },
+            "ADS-PLC1.IIN_Base.ST_TIME_PROPORTIONAL_THERMOSTAT_STATE": {
+                "additionalProperties": false,
+                "properties": {
+                    "calculatedOnTime": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/TIME"
+                            },
+                            {
+                                "propertyOrder": 3
+                            }
+                        ]
+                    },
+                    "cycleTimeExpired": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/TIME"
+                            },
+                            {
+                                "propertyOrder": 2
+                            }
+                        ]
+                    },
+                    "on": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "propertyOrder": 1
+                            }
+                        ]
+                    }
+                },
+                "required": [
+                    "on",
+                    "cycleTimeExpired",
+                    "calculatedOnTime"
+                ],
+                "type": "object"
+            },
             "ADS-PLC1.IIN_Base.T_DEVICE_ID": {
                 "$ref": "tchmi:general#/definitions/STRING%2880%29"
             },
@@ -2549,6 +2609,240 @@
                     }
                 ]
             },
+            "ADS-PLC1.ST_CURING_STATION_HEATER_CONTROL_HMI": {
+                "additionalProperties": false,
+                "properties": {
+                    "ai": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:server#/definitions/ADS-PLC1.IIN_Base.ST_AI_HMI"
+                            },
+                            {
+                                "comment": "staticSettings:\t\tREFERENCE TO ST_CURING_STATION_HEATER_CONTROL_STATIC_SETTINGS;",
+                                "propertyOrder": 3
+                            }
+                        ]
+                    },
+                    "service": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:server#/definitions/ADS-PLC1.ST_CURING_STATION_HEATER_CONTROL_SERVICE"
+                            },
+                            {
+                                "propertyOrder": 2
+                            }
+                        ]
+                    },
+                    "specialThermostat": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:server#/definitions/ADS-PLC1.IIN_Base.ST_TIME_PROPORTIONAL_THERMOSTAT_HMI"
+                            },
+                            {
+                                "comment": "regularThermostat:\t\tST_THERMOSTAT_HMI;",
+                                "propertyOrder": 4
+                            }
+                        ]
+                    },
+                    "state": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:server#/definitions/ADS-PLC1.ST_CURING_STATION_HEATER_CONTROL_STATE"
+                            },
+                            {
+                                "propertyOrder": 1
+                            }
+                        ]
+                    }
+                },
+                "required": [
+                    "state",
+                    "service",
+                    "ai",
+                    "specialThermostat"
+                ],
+                "type": "object"
+            },
+            "ADS-PLC1.ST_CURING_STATION_HEATER_CONTROL_SERVICE": {
+                "additionalProperties": false,
+                "type": "object"
+            },
+            "ADS-PLC1.ST_CURING_STATION_HEATER_CONTROL_STATE": {
+                "additionalProperties": false,
+                "properties": {
+                    "enabled": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "propertyOrder": 1
+                            }
+                        ]
+                    },
+                    "fan": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "propertyOrder": 3
+                            }
+                        ]
+                    },
+                    "heat": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "propertyOrder": 2
+                            }
+                        ]
+                    },
+                    "stationId": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/UDINT"
+                            },
+                            {
+                                "propertyOrder": 7
+                            }
+                        ]
+                    },
+                    "tempInC": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/REAL"
+                            },
+                            {
+                                "propertyOrder": 4
+                            }
+                        ]
+                    },
+                    "testTemperatureReached": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "comment": "tempInF:\t\t\t\t\tREAL;",
+                                "propertyOrder": 5
+                            }
+                        ]
+                    },
+                    "workTemperatureReached": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/BOOL"
+                            },
+                            {
+                                "propertyOrder": 6
+                            }
+                        ]
+                    }
+                },
+                "required": [
+                    "enabled",
+                    "heat",
+                    "fan",
+                    "tempInC",
+                    "testTemperatureReached",
+                    "workTemperatureReached",
+                    "stationId"
+                ],
+                "type": "object"
+            },
+            "ADS-PLC1.ST_CURING_STATION_HEATER_CONTROL_STATIC_SETTINGS": {
+                "additionalProperties": false,
+                "properties": {
+                    "cycleTime": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/TIME"
+                            },
+                            {
+                                "comment": "100% control = HEAT is on for this amount of cycle time, 50% results in 10sec ON and 10s OFF",
+                                "propertyOrder": 7
+                            }
+                        ]
+                    },
+                    "hysteresis": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/REAL"
+                            },
+                            {
+                                "comment": "If temp within this value, temp is 'reached'",
+                                "propertyOrder": 3
+                            }
+                        ]
+                    },
+                    "maxPowerProcent": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/REAL"
+                            },
+                            {
+                                "comment": "To limit the output (in case the heating element is too powerfull)",
+                                "propertyOrder": 6
+                            }
+                        ]
+                    },
+                    "minPowerProcent": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/REAL"
+                            },
+                            {
+                                "comment": "If this were a PID controller, we need 20% to keep the constant heat (at target setpoint)",
+                                "propertyOrder": 5
+                            }
+                        ]
+                    },
+                    "pFactor": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/REAL"
+                            },
+                            {
+                                "comment": "Temp diff * pFactor = power output (just like a PID controller but without the ID)",
+                                "propertyOrder": 4
+                            }
+                        ]
+                    },
+                    "testTemperature": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/REAL"
+                            },
+                            {
+                                "propertyOrder": 1
+                            }
+                        ]
+                    },
+                    "workTemperature": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:general#/definitions/REAL"
+                            },
+                            {
+                                "propertyOrder": 2
+                            }
+                        ]
+                    }
+                },
+                "required": [
+                    "testTemperature",
+                    "workTemperature",
+                    "hysteresis",
+                    "pFactor",
+                    "minPowerProcent",
+                    "maxPowerProcent",
+                    "cycleTime"
+                ],
+                "type": "object"
+            },
             "ADS-PLC1.ST_CURING_STATION_HMI": {
                 "additionalProperties": false,
                 "properties": {
@@ -2565,7 +2859,7 @@
                     "heater": {
                         "allOf": [
                             {
-                                "$ref": "tchmi:server#/definitions/ADS-PLC1.ST_HEATER_HMI"
+                                "$ref": "tchmi:server#/definitions/ADS-PLC1.ST_CURING_STATION_HEATER_CONTROL_HMI"
                             },
                             {
                                 "propertyOrder": 5
@@ -4148,6 +4442,27 @@
             "OPTIONS": {},
             "SCHEMA": {
                 "function": true
+            },
+            "USEMAPPING": true
+        },
+        "ADS.PLC1.HEATER_CONTROL_SETTINGS.settings": {
+            "ACCESS": 3,
+            "DOMAIN": "ADS",
+            "DYNAMIC": true,
+            "HIDDEN": false,
+            "MAPPING": "PLC1::HEATER_CONTROL_SETTINGS::settings",
+            "SCHEMA": {
+                "allOf": [
+                    {
+                        "addSymbol": true,
+                        "attributes": {
+                            "TcHmiSymbol.ShowRecursively": ""
+                        }
+                    },
+                    {
+                        "$ref": "tchmi:server#/definitions/ADS-PLC1.ST_CURING_STATION_HEATER_CONTROL_STATIC_SETTINGS"
+                    }
+                ]
             },
             "USEMAPPING": true
         },
@@ -12838,7 +13153,6 @@
                 "ADS.PLC1.GVL.bStopCycle": 3,
                 "ADS.PLC1.GVL.bUIConvManualJog": 3,
                 "ADS.PLC1.GVL.nConveyorSpeedPr": 3,
-                "ADS.PLC1.HMI.cs": 3,
                 "ADS.PLC1.MAIN.UserInterfaceFunctions.Error": 3,
                 "ADS.PLC1.MAIN.UserInterfaceFunctions.Reset_Error": 3,
                 "ADS.PLC1.MAIN.UserInterfaceFunctions.RobotActivate": 3,

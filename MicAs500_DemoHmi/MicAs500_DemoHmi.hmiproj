@@ -177,6 +177,13 @@
     <Content Include="Components\ControlSignals\ReadCs.js">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="Components\CuringStation\CuringStationHeater.usercontrol">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Components\CuringStation\CuringStationHeater.usercontrol.json">
+      <SubType>Content</SubType>
+      <DependentUpon>Components\CuringStation\CuringStationHeater.usercontrol</DependentUpon>
+    </Content>
     <Content Include="Components\CuringStation\curingStationMinimal.usercontrol">
       <SubType>Content</SubType>
     </Content>

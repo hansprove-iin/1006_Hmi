@@ -1,4 +1,4 @@
-<div id="Desktop" data-tchmi-type="TcHmi.Controls.System.TcHmiView" data-tchmi-top="0" data-tchmi-left="0" data-tchmi-width-mode="Value" data-tchmi-height-mode="Value" data-tchmi-creator-viewport-width="1920" data-tchmi-creator-viewport-height="515" data-tchmi-creator-visibility="Visible" data-tchmi-background-image="Images/MainBg/Etusivu tausta ruudukolla.png" data-tchmi-bottom-unit="px" data-tchmi-right-unit="px" data-tchmi-width="1920" data-tchmi-height="812" data-tchmi-zindex="11">
+<div id="Desktop" data-tchmi-type="TcHmi.Controls.System.TcHmiView" data-tchmi-top="0" data-tchmi-left="0" data-tchmi-width-mode="Value" data-tchmi-height-mode="Value" data-tchmi-creator-viewport-width="1920" data-tchmi-creator-viewport-height="515" data-tchmi-creator-visibility="Visible" data-tchmi-background-image="Images/MainBg/Etusivu tausta ruudukolla.png" data-tchmi-bottom-unit="px" data-tchmi-right-unit="px" data-tchmi-width="1920" data-tchmi-height="979" data-tchmi-zindex="11">
 
 
 <div id="TimeGrid" data-tchmi-type="TcHmi.Controls.System.TcHmiGrid" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-right="0" data-tchmi-bottom="440" data-tchmi-left="1536" data-tchmi-zindex="61" data-tchmi-creator-visibility="Visible">
@@ -7493,7 +7493,7 @@
 </script>
 </div>
 </div>
-<div id="CuringRegion" data-tchmi-type="TcHmi.Controls.System.TcHmiRegion" data-tchmi-height="802" data-tchmi-height-unit="px" data-tchmi-left="10" data-tchmi-left-unit="px" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-width="1593" data-tchmi-width-unit="px">
+<div id="CuringRegion" data-tchmi-type="TcHmi.Controls.System.TcHmiRegion" data-tchmi-height="989" data-tchmi-height-unit="px" data-tchmi-left="10" data-tchmi-left-unit="px" data-tchmi-top="0" data-tchmi-top-unit="px" data-tchmi-width="1593" data-tchmi-width-unit="px">
 </div>
 <div id="TcHmiButton_137" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiButton" data-tchmi-height="50" data-tchmi-height-unit="px" data-tchmi-left="1710" data-tchmi-left-unit="px" data-tchmi-text="Button" data-tchmi-top="668" data-tchmi-top-unit="px" data-tchmi-width="100" data-tchmi-width-unit="px" data-tchmi-word-wrap="True">
 

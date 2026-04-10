@@ -164,6 +164,9 @@
       "url": "Components/ControlSignals/ControlSignalsSettings.usercontrol"
     },
     {
+      "url": "Components/CuringStation/CuringStationHeater.usercontrol"
+    },
+    {
       "url": "Components/CuringStation/curingStationMinimal.usercontrol"
     },
     {
