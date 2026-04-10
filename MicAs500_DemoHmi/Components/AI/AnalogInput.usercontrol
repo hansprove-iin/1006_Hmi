@@ -279,6 +279,6 @@
 ]
 </script>
 </div>
-<div id="AnalogInputSettings" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="307" data-tchmi-height-unit="px" data-tchmi-left="8" data-tchmi-left-unit="px" data-tchmi-target-user-control="Components/AI/AnalogInputSettings.usercontrol" data-tchmi-top="65" data-tchmi-top-unit="px" data-tchmi-width="467" data-tchmi-width-unit="px" data-tchmi-settings="%pp%hmi::settings%/pp%" data-tchmi-zindex="18" data-tchmi-visibility="%f%VisibilityFromBool(%pp%_settingsVisible%/pp%)%/f%" data-tchmi-visible="%pp%_settingsVisible%/pp%">
+<div id="AnalogInputSettings" data-tchmi-type="TcHmi.Controls.System.TcHmiUserControlHost" data-tchmi-height="337" data-tchmi-height-unit="px" data-tchmi-left="4" data-tchmi-left-unit="px" data-tchmi-target-user-control="Components/AI/AnalogInputSettings.usercontrol" data-tchmi-top="65" data-tchmi-top-unit="px" data-tchmi-width="467" data-tchmi-width-unit="px" data-tchmi-settings="%pp%hmi::settings%/pp%" data-tchmi-zindex="18" data-tchmi-visibility="%f%VisibilityFromBool(%pp%_settingsVisible%/pp%)%/f%" data-tchmi-visible="%pp%_settingsVisible%/pp%" data-tchmi-hmi="%pp%hmi%/pp%">
 </div>
 </div>

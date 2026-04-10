@@ -729,7 +729,7 @@
             "ADS-PLC1.IIN_Base.ST_AI_SERVICE": {
                 "additionalProperties": false,
                 "properties": {
-                    "iForce": {
+                    "force": {
                         "allOf": [
                             {
                                 "$ref": "tchmi:general#/definitions/BOOL"
@@ -739,7 +739,7 @@
                             }
                         ]
                     },
-                    "iForceValue": {
+                    "forceValue": {
                         "allOf": [
                             {
                                 "$ref": "tchmi:general#/definitions/REAL"
@@ -749,7 +749,7 @@
                             }
                         ]
                     },
-                    "iTeachMax": {
+                    "teachMax": {
                         "allOf": [
                             {
                                 "$ref": "tchmi:general#/definitions/BOOL"
@@ -760,7 +760,7 @@
                             }
                         ]
                     },
-                    "iTeachMin": {
+                    "teachMin": {
                         "allOf": [
                             {
                                 "$ref": "tchmi:general#/definitions/BOOL"
@@ -773,10 +773,10 @@
                     }
                 },
                 "required": [
-                    "iTeachMin",
-                    "iTeachMax",
-                    "iForceValue",
-                    "iForce"
+                    "teachMin",
+                    "teachMax",
+                    "forceValue",
+                    "force"
                 ],
                 "type": "object"
             },
@@ -1509,6 +1509,16 @@
             "ADS-PLC1.IIN_Base.ST_CYL_HMI": {
                 "additionalProperties": false,
                 "properties": {
+                    "csOut": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:server#/definitions/ADS-PLC1.IIN_Base.ST_CONTROL_SIGNALS_OUT"
+                            },
+                            {
+                                "propertyOrder": 5
+                            }
+                        ]
+                    },
                     "dis": {
                         "allOf": [
                             {
@@ -1554,7 +1564,8 @@
                     "state",
                     "service",
                     "settings",
-                    "dis"
+                    "dis",
+                    "csOut"
                 ],
                 "type": "object"
             },
@@ -2001,6 +2012,16 @@
                             }
                         ]
                     },
+                    "csOut": {
+                        "allOf": [
+                            {
+                                "$ref": "tchmi:server#/definitions/ADS-PLC1.IIN_Base.ST_CONTROL_SIGNALS_OUT"
+                            },
+                            {
+                                "propertyOrder": 5
+                            }
+                        ]
+                    },
                     "service": {
                         "allOf": [
                             {
@@ -2036,7 +2057,8 @@
                     "state",
                     "service",
                     "settings",
-                    "alarmSettings"
+                    "alarmSettings",
+                    "csOut"
                 ],
                 "type": "object"
             },
